@@ -1,4 +1,4 @@
-@import '../../../../assets/util/colors.scss';
+@import "../../../../assets/util/colors.scss";
 
 header {
   width: 100%;
@@ -17,11 +17,55 @@ header {
     align-items: center;
 
     nav {
+      display: flex;
+      align-items: center;
+      height: 100%;
       a {
-        color: $accentyellow;
         text-decoration: none;
+        margin-left: 24px;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+      }
+      a:not(.login-btn) {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: $textdarkgrey;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 8px;
+          left: 0;
+          width: 0%;
+          height: 2px;
+          background-color: $primaryblue;
+          transition: all 0.2s ease-in-out;
+        }
+
+        &:hover {
+          color: $textblack;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+
+      .login-btn {
+        padding: 8px 18px;
+        border-radius: 4px;
+        background-color: $primaryblue;
+        color: #ffffff;
+        font-size: 0.8rem;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+        &:hover {
+          background-color: $primarybluedark;
+        }
       }
     }
   }
 }
-
