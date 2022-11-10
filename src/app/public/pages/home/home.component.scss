@@ -1,0 +1,98 @@
+@import "../../../../assets/util/colors.scss";
+
+main {
+  width: 100%;
+  height: auto;
+}
+
+.hero-section {
+  padding-top: 48px;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .hero-text {
+    padding-right: 48px;
+
+    .hero-text-header {
+      padding-top: 48px;
+      font-family: "Poppins", sans-serif;
+      font-size: 2.441rem;
+      color: $textdarkergrey;
+      line-height: 125%;
+      font-weight: 600;
+
+      span {
+        color: $primaryblue;
+      }
+    }
+
+    .hero-text-body {
+      margin: 24px 0;
+      color: $textlightgrey;
+      line-height: 150%;
+    }
+
+    .hero-stickers {
+      width: 100%;
+      position: relative;
+
+      img {
+        height: 48px;
+        transform: translateX(-4px);
+      }
+    }
+
+    .hero-statistics {
+      margin-top: 48px;
+      width: 100%;
+      display: flex;
+
+      .hero-statistics-column {
+        margin-right: 48px;
+        display: flex;
+        flex-direction: column;
+
+        .hero-statistics-value {
+          font-size: 1.563rem;
+          font-weight: 800;
+          line-height: 125%;
+          color: $primaryblue;
+        }
+        .hero-statistics-label {
+          font-size: 0.8rem;
+          line-height: 150%;
+          color: $textlightgrey;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .hero-illustration {
+    position: relative;
+
+    img {
+      position: absolute;
+      width: 50%;
+      aspect-ratio: 7 / 9;
+      object-fit: cover;
+      display: block;
+      border-radius: 8px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    }
+    img:first-of-type {
+      transform: rotate(-8deg);
+      left: 48px;
+      z-index: 2;
+    }
+    img:last-of-type {
+      transform: rotate(32deg);
+      top: 96px;
+      right: 0px;
+      z-index: 1;
+      filter: brightness(0.6);
+    }
+  }
+}
