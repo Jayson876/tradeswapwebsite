@@ -9,7 +9,12 @@
           [routerLinkActiveOptions]="{ exact: true }"
           >Home</a
         >
-        <a href="">Find A Tradesman</a>
+                <a
+          [routerLink]="['/workers']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Find A Tradesman</a
+        >
         <a href="">Contact Us</a>
         <a href="" class="login-btn">Login</a>
       </nav>
