@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './public/pages/home/home.component';
 import { ContactusComponent } from './public/pages/contactus/contactus.component';
 import { HeaderComponent } from './public/partials/header/header.component';
-import { WorkersListComponent } from './workers-list/workers-list.component';
+import { WorkersListComponent } from './public/pages/workers-list/workers-list.component';
 
 @NgModule({
   declarations: [
