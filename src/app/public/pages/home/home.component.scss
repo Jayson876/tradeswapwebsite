@@ -6,7 +6,7 @@ main {
 }
 
 .hero-section {
-  padding-top: 48px;
+  padding: 48px 0;
   width: 100%;
   height: auto;
   display: grid;
@@ -71,12 +71,14 @@ main {
   }
   .hero-illustration {
     position: relative;
+    padding-top: 24px;
 
     img {
       position: absolute;
       width: 50%;
       aspect-ratio: 7 / 9;
       object-fit: cover;
+      object-position: 50% 20%;
       display: block;
       border-radius: 8px;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -93,6 +95,91 @@ main {
       right: 0px;
       z-index: 1;
       filter: brightness(0.6);
+    }
+
+    .illustration-card {
+      top: 310px;
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      padding: 12px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      position: absolute;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+      z-index: 3;
+
+      .illustration-card-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px;
+        border-radius: 50%;
+        background-color: $primarybluedark;
+
+        svg {
+          fill: #ffffff;
+        }
+      }
+      .illustration-card-text {
+        margin-left: 8px;
+
+        .illustration-card-text-header {
+          font-weight: 600;
+          color: $textblack;
+          line-height: 150%;
+        }
+
+        .illustration-card-text-body {
+          color: $textlightgrey;
+          font-size: 0.64rem;
+          line-height: 150%;
+        }
+      }
+    }
+  }
+}
+
+.search-section {
+  padding: 72px 0 48px;
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: 60%;
+    padding: 24px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+    .search-icon {
+      height: 24px;
+      width: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+        fill: $primaryblue;
+      }
+    }
+
+    select {
+      flex: 1;
+      border: 0;
+      padding: 0;
+      height: 48px;
+      background-color: $accentyellow;
+      padding-left: 12px;
+      border-right: 2px dashed $textlightgrey;
+
+
+      &:first-of-type {
+        padding: 0;
+      }
     }
   }
 }
