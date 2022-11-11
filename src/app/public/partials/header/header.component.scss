@@ -20,7 +20,13 @@ header {
         margin-left: 24px;
         font-weight: 500;
         transition: all 0.2s ease-in-out;
+
+        &.active {
+          color: $textblack !important;
+
+        }
       }
+
       a:not(.login-btn) {
         height: 100%;
         display: flex;
@@ -35,7 +41,7 @@ header {
           left: 0;
           width: 0%;
           height: 2px;
-          background-color: $primaryblue;
+          background-color: $accentyellow;
           transition: all 0.2s ease-in-out;
         }
 
