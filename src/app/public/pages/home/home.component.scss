@@ -116,7 +116,7 @@ main {
         align-items: center;
         padding: 4px;
         border-radius: 50%;
-        background-color: $primarybluedark;
+        background-color: $accentyellow;
 
         svg {
           fill: #ffffff;
@@ -151,7 +151,7 @@ main {
     border-radius: 8px;
     background-color: #ffffff;
     width: 60%;
-    padding: 24px;
+    padding: 12px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 
@@ -166,19 +166,38 @@ main {
         fill: $primaryblue;
       }
     }
-
-    select {
+    .search-input {
+      padding-right: 12px;
       flex: 1;
+      border-right: 2px dashed $textlightgrey;
+      select {
+        width: 100%;
+        border: 0;
+        padding: 0;
+        height: 24px;
+        padding: 0 12px;
+        color: $textdarkgrey;
+
+        &:focus {
+          outline: 0;
+        }
+      }
+    }
+
+    button {
+      margin-left: 12px;
       border: 0;
       padding: 0;
-      height: 48px;
-      background-color: $accentyellow;
-      padding-left: 12px;
-      border-right: 2px dashed $textlightgrey;
+      padding: 8px 18px;
+      border-radius: 4px;
+      background-color: $primaryblue;
+      color: #ffffff;
+      font-size: 0.8rem;
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+        rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
-
-      &:first-of-type {
-        padding: 0;
+      &:hover {
+        background-color: $primarybluedark;
       }
     }
   }
