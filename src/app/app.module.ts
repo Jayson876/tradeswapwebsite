@@ -7,6 +7,7 @@ import { HomeComponent } from './public/pages/home/home.component';
 import { ContactusComponent } from './public/pages/contactus/contactus.component';
 import { HeaderComponent } from './public/partials/header/header.component';
 import { WorkersListComponent } from './public/pages/workers-list/workers-list.component';
+import { FooterComponent } from './public/partials/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { WorkersListComponent } from './public/pages/workers-list/workers-list.c
     HomeComponent,
     ContactusComponent,
     HeaderComponent,
-    WorkersListComponent
+    WorkersListComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
