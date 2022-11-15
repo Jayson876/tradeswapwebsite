@@ -8,11 +8,20 @@ import { categories } from 'src/app/worker-categories';
 })
 export class WorkersComponent implements OnInit {
   categories = categories;
+  currentPage = 0;
+  pageLimit = 8;
   constructor() {}
+
+  changePage(event: any) {
+    this.currentPage = event.pageIndex;
+    this.pageLimit = event.pageSize;
+  }
+
   workers = [
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -23,7 +32,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -34,7 +44,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -56,7 +67,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -67,7 +79,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -78,7 +91,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -100,7 +114,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -111,7 +126,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -122,7 +138,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -144,7 +161,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -155,7 +173,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -166,7 +185,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -188,7 +208,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -199,7 +220,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -210,7 +232,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -232,7 +255,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -243,7 +267,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -254,7 +279,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -276,7 +302,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -287,7 +314,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -298,7 +326,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -320,7 +349,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -331,7 +361,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -342,7 +373,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -364,7 +396,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -375,7 +408,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -386,7 +420,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,
@@ -408,7 +443,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sam Baker',
-      image: 'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
+      image:
+        'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
       location: 'Kingston',
       rate: 7500,
@@ -419,7 +455,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'David Bannings',
-      image: 'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
+      image:
+        'https://nigerianprice.com/wp-content/uploads/2022/05/cost-of-painting-nigeria.jpg',
       skill: 'Painter',
       location: 'Kingston',
       rate: 3100,
@@ -430,7 +467,8 @@ export class WorkersComponent implements OnInit {
     },
     {
       name: 'Sheldon White',
-      image: 'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
+      image:
+        'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
       location: 'Kingston',
       rate: 3500,

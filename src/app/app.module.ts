@@ -10,7 +10,7 @@ import { WorkersListComponent } from './public/pages/workers-list/workers-list.c
 
 import { SignInComponent } from './public/pages/sign-in/sign-in.component';
 import { FormsModule } from '@angular/forms';
-
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './public/modules/materials/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -27,27 +27,24 @@ import { WorkersComponent } from './public/pages/workers/workers.component';
     HeaderComponent,
     WorkersListComponent,
 
-    SignInComponent
-
+    SignInComponent,
 
     ClientRegistrationComponent,
-    TradesmanRegistrationComponent
-    FooterComponent
-    WorkersComponent
-
+    TradesmanRegistrationComponent,
+    FooterComponent,
+    WorkersComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    MatPaginatorModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
 
     MaterialsModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

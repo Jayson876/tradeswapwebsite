@@ -12,6 +12,7 @@ main {
   padding-left: 48px;
   padding-right: 96px;
   background-color: $lightblue;
+  box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
@@ -54,6 +55,7 @@ main {
         padding-right: 12px;
         flex: 1;
         border-right: 2px dashed $textlightgrey;
+
         select {
           width: 100%;
           border: 0;
@@ -112,26 +114,100 @@ main {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
+  box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
 
   .controls-top {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding-bottom: 24px;
+
+    .sort-controls {
+      display: flex;
+      align-items: center;
+
+      .sort-label {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: $textlightgrey;
+      }
+      .sort-categories {
+        display: flex;
+        align-content: center;
+
+        .sort-category {
+          font-weight: 400;
+          margin-left: 24px;
+          font-size: 0.8rem;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            font-weight: 500;
+            text-decoration: underline;
+          }
+
+          &.active {
+            font-weight: 500;
+            text-decoration: underline;
+            color: $primaryblue;
+          }
+        }
+      }
+    }
 
     button {
       border: 0;
       background: none;
       padding: 0;
+      font-size: 0.8rem;
       font-weight: 500;
       color: $textlightgrey;
       display: flex;
       align-items: center;
       cursor: pointer;
+      transition: all 0.2s ease-in-out;
 
       svg {
         fill: $textlightgrey;
+        transition: all 0.2s ease-in-out;
+        animation-name: filterarrow;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
       }
+
+      &:hover {
+        color: $primaryblue;
+
+        svg {
+          fill: $primaryblue;
+          animation-name: filterarrow2;
+          animation-duration: 1s;
+          animation-iteration-count: 1;
+        }
+      }
+    }
+  }
+
+  @keyframes filterarrow {
+    0% {
+      transform: translateY(-2px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+    100% {
+      transform: translateY(-2px);
+    }
+  }
+  @keyframes filterarrow2 {
+    0% {
+      transform: translateY(-2px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+    100% {
+      transform: translateY(0px);
     }
   }
 
@@ -163,6 +239,8 @@ main {
 }
 
 .workers-card-section {
+  padding-bottom: 48px;
+
   .line-dot {
     margin: 0 12px;
   }
@@ -242,6 +320,14 @@ main {
             color: $textblack;
             display: flex;
             align-items: center;
+            display: flex;
+            align-items: center;
+
+            .rating-star {
+              margin-top: -2px;
+              margin-left: 2px;
+              color: $accentyellow;
+            }
           }
         }
 
@@ -268,4 +354,61 @@ main {
       }
     }
   }
+}
+
+.paginator {
+  margin-top: 24px;
+}
+::ng-deep .mat-icon-button.mat-button-disabled.mat-button-disabled {
+  color: $textlightgrey;
+}
+
+::ng-deep .mat-paginator-container {
+  background-color: #ffffff !important;
+  box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+}
+
+::ng-deep .mat-paginator {
+  color: $textdarkergrey !important;
+}
+
+::ng-deep .mat-paginator,
+.mat-paginator-page-size .mat-select-trigger {
+  color: $textdarkgrey !important;
+}
+
+::ng-deep .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $textblack !important;
+}
+
+::ng-deep .mat-form-field.mat-primary .mat-select-arrow {
+  color: $textlightgrey !important;
+}
+
+::ng-deep .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  color: $textdarkgrey !important;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: $textlightgrey !important;
+}
+::ng-deep
+  .mat-form-field-appearance-legacy.mat-focused
+  .mat-form-field-underline {
+  background-color: green !important;
+}
+
+::ng-deep .mat-select-panel {
+  background-color: #ffffff !important;
+}
+::ng-deep .mat-select-value {
+  color: $textdarkergrey !important;
+  background-color: #ffffff !important;
+}
+::ng-deep .mat-option {
+  color: $textlightgrey !important;
+  background-color: #ffffff !important;
+}
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: $primaryblue !important;
 }

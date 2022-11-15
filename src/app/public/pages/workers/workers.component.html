@@ -381,6 +381,15 @@
     </section>
     <section class="controls">
       <div class="controls-top">
+        <div class="sort-controls">
+          <div class="sort-label">Sort By:</div>
+          <div class="sort-categories">
+            <button class="sort-category active">All</button>
+            <button class="sort-category">Most Popular</button>
+            <button class="sort-category">Price: Highest To Lowest</button>
+            <button class="sort-category">Price: Lowest To Highest</button>
+          </div>
+        </div>
         <button>
           Filters
 
@@ -404,7 +413,7 @@
     </section>
     <section class="workers-card-section">
       <div class="workers-card-group">
-        <article class="workers-card" *ngFor="let worker of workers">
+        <article class="workers-card" *ngFor="let worker of workers  | slice: currentPage * pageLimit:currentPage * pageLimit + pageLimit">
           <img src="{{ worker.image }}" alt="" />
           <div class="workers-card-title">
             <div class="worker-name">{{ worker.name }}</div>
@@ -424,7 +433,10 @@
           <div class="workers-card-details">
             <div class="worker-rating-section">
               <div class="worker-rating-label">Rating</div>
-              <div class="worker-rating-value">{{ worker.rating }} &starf;</div>
+              <div class="worker-rating-value">
+                <span>{{ worker.rating }} </span
+                ><span class="rating-star">&starf;</span>
+              </div>
             </div>
             <div class="worker-review-section">
               <div class="worker-review-label">Reviews</div>
@@ -436,6 +448,17 @@
           </div>
         </article>
       </div>
+<div class="paginator">
+      <mat-paginator
+
+        [length]="workers.length"
+        [pageSize]="pageLimit"
+        [pageSizeOptions]="[4, 8, 12, 48, 96]"
+        (page)="changePage($event)"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+</div>
     </section>
   </div>
 </main>

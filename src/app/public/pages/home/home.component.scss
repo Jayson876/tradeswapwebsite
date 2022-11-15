@@ -109,8 +109,7 @@ main {
       background-color: #ffffff;
       border-radius: 8px;
       position: absolute;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+      box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
       z-index: 3;
 
       .illustration-card-circle {
@@ -155,8 +154,7 @@ main {
     background-color: #ffffff;
     width: 60%;
     padding: 12px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
-      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
 
     .search-icon {
       height: 24px;
@@ -310,6 +308,12 @@ main {
             color: $textblack;
             display: flex;
             align-items: center;
+
+            .rating-star {
+              margin-top: -2px;
+              margin-left: 2px;
+              color: $accentyellow;
+            }
           }
         }
 
