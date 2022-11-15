@@ -9,8 +9,9 @@ import { HeaderComponent } from './public/partials/header/header.component';
 import { WorkersListComponent } from './public/pages/workers-list/workers-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './public/modules/materials/materials.module';
-import { RegistrationComponent } from './public/pages/registration/registration.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClientRegistrationComponent } from './public/pages/registration/client-registration/client-registration.component';
+import { TradesmanRegistrationComponent } from './public/pages/registration/tradesman-registration/tradesman-registration.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactusComponent,
     HeaderComponent,
     WorkersListComponent,
-    RegistrationComponent
+    ClientRegistrationComponent,
+    TradesmanRegistrationComponent
   ],
   imports: [
     BrowserModule,
