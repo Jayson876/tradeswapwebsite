@@ -1,0 +1,271 @@
+@import "../../../../assets/util/colors.scss";
+
+
+.my-container{
+    width: 90%;
+    margin: auto;
+    padding: 0 1vw;
+    // border: 1px solid red;
+
+}
+
+.search-section {
+    // border: 1px solid red;
+    padding: 3vw 0 5vw 0;
+
+    h1{
+        width: 60%;
+        margin: 0 auto 0.5vw auto;
+        font-size: 1.5vw;
+        color: $textdarkgrey;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      border-radius: 8px;
+      background-color: #ffffff;
+      width: 60%;
+      padding: 12px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+      .search-icon {
+        height: 24px;
+        width: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          fill: $primaryblue;
+        }
+      }
+      .search-input {
+        padding-right: 12px;
+        flex: 1;
+        border-right: 2px dashed $textlightgrey;
+        select {
+          width: 100%;
+          border: 0;
+          padding: 0;
+          height: 24px;
+          padding: 0 12px;
+          color: $textdarkgrey;
+
+          &:focus {
+            outline: 0;
+          }
+        }
+      }
+
+      button {
+        margin-left: 12px;
+        border: 0;
+        padding: 0;
+        padding: 8px 18px;
+        border-radius: 4px;
+        background-color: $primaryblue;
+        color: #ffffff;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+          rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+        &:hover {
+          background-color: $primarybluedark;
+        }
+      }
+    }
+  }
+
+  .body-divider{
+    height: 0.1vw;
+    margin-bottom: 2vw;
+    border: none;
+    background-color: rgba(8, 0, 58, 0.036);
+}
+
+.body-flex{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    // BODY LEFT / FILTER SECTION
+    .body-left{
+        width: 20%;
+        // height: 50vw;
+        // border: 1px solid red;
+
+        h2 {
+            width: fit-content;
+            padding-top: 4.3vw;
+            color: $textdarkgrey;
+            line-height: 1.5;
+            font-size: 1vw;
+        }
+
+        .heading-underline{
+            width: 20%;
+            background-color: $accentyellow;
+            height: 0.2vw;
+            border: none;
+        }
+
+        .category-widgets-contain{
+            width: 100%;
+            margin-top: 0.5vw;
+            display: flex;
+            flex-wrap: wrap;
+
+            .category-widget{
+                width: auto;
+                padding: 2% 3%;
+                margin: 0.3vw 0.2vw 0.3vw 0;
+                border: 2px solid rgba(238, 238, 238, 0.685);
+                font-size: 0.8rem;
+                cursor: pointer;
+                transition: 0.3s;
+                color: rgba(97, 96, 95, 0.884);
+            }
+
+            .category-widget:hover{
+                border: 2px solid rgba(0, 20, 169, 0.297);
+                // box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.26);
+                // color: $primaryblue;
+            }
+        }
+    }
+
+    // BODY RIGHT / WORKER GRID LIST
+    .body-right{
+        width: 80%;
+        // height: 50vw;
+        // border: 1px solid green;
+
+        h2 {
+            width: fit-content;
+            margin: 0 0 1.5vw 1vw;
+            font-size: 2vw;
+            color: $primaryblue;
+            line-height: 1.2;
+            text-align: center;
+        }
+
+        .heading-underline{
+            width: 20%;
+            background-color: $accentyellow;
+            height: 0.2vw;
+            border: none;
+            text-align: center;
+        }
+
+        .worker-cards-container{
+            width: 100%;
+            padding: 0.3vw 0.5vw 1vw 1vw;
+            overflow: hidden;
+            margin: 0 auto;
+            display: grid;
+            gap: 1.3vw;
+            row-gap: 1.5vw;
+            // grid-template-areas: "card card card";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            // align-items: center;
+            // justify-items: center;
+            // grid-template-rows: ;
+            // border: 1px solid red;
+
+            .worker-card{
+                background-color: rgba(85, 117, 255, 0.041);
+                border: 1px solid rgba(0, 0, 0, 0.048);
+                border-radius: 7px;
+                box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.168);
+
+
+                .worker-img{
+                    width: 100%;
+                    // height: 50%;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 7px;
+                    }
+                }
+
+                .worker-details{
+                    padding: 0 0.7vw 0.5vw 0.7vw;
+
+                    .name-rate-row{
+                        margin-top: 1vw;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 1.2vw;
+                        font-weight: 700;
+                        color: $textblack;
+
+                        .worker-rate{
+                            font-size: 1vw;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .skill-location{
+                        margin-top: 0.3vw;
+                        font-size: 0.8vw;
+                        font-weight: 600;
+                        color: $primaryblue;
+                    }
+
+                    .ratings-reviews-row{
+                        margin: 1vw 0 0.8vw 0;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+
+                        .ratings, .reviews{
+                            font-size: 0.6vw;
+                            // text-align: center;
+                            padding: 0.2vw 0.4vw;
+                            background-color: rgba(255, 255, 255, 0.738);
+                            border: 1px solid rgba(0, 0, 0, 0.073);
+                            border-radius: 5px;
+                            // box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.032);
+
+                            p{
+                                line-height: 1.6;
+
+                                i{
+                                    font-size: 0.5vw;
+                                    color: $accentyellow;
+                                }
+                            }
+                        }
+
+                        .view-more-btn{
+                            a{
+                                // height: 100%;
+                                font-size: 0.6vw;
+                                padding: 0.8vw 1vw;
+                                color: white;
+                                background-color: $primaryblue;
+                                border-radius: 3px;
+                                text-decoration: none;
+                            }
+
+                            a:hover{
+                                background-color: $primarybluedark;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

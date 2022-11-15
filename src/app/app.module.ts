@@ -7,9 +7,18 @@ import { HomeComponent } from './public/pages/home/home.component';
 import { ContactusComponent } from './public/pages/contactus/contactus.component';
 import { HeaderComponent } from './public/partials/header/header.component';
 import { WorkersListComponent } from './public/pages/workers-list/workers-list.component';
+
 import { SignInComponent } from './public/pages/sign-in/sign-in.component';
 import { FormsModule } from '@angular/forms';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialsModule } from './public/modules/materials/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ClientRegistrationComponent } from './public/pages/registration/client-registration/client-registration.component';
+import { TradesmanRegistrationComponent } from './public/pages/registration/tradesman-registration/tradesman-registration.component';
+import { FooterComponent } from './public/partials/footer/footer.component';
+import { WorkersComponent } from './public/pages/workers/workers.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,13 +26,26 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactusComponent,
     HeaderComponent,
     WorkersListComponent,
+
     SignInComponent
+
+
+    ClientRegistrationComponent,
+    TradesmanRegistrationComponent
+    FooterComponent
+    WorkersComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     FormsModule,
     ReactiveFormsModule
+
+    MaterialsModule,
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
