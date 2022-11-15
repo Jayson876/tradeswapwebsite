@@ -1,5 +1,9 @@
 @import "../../../../assets/util/colors.scss";
 
+.line-dot {
+  margin: 0 12px;
+}
+
 main {
   width: 100%;
   height: auto;
@@ -10,14 +14,13 @@ main {
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.2fr;
 
   .hero-text {
     padding-right: 48px;
 
     .hero-text-header {
       padding-top: 48px;
-      font-family: "Poppins", sans-serif;
       font-size: 2.441rem;
       color: $textdarkergrey;
       line-height: 125%;
@@ -29,7 +32,7 @@ main {
     }
 
     .hero-text-body {
-      margin: 24px 0;
+      margin: 12px 0;
       color: $textlightgrey;
       line-height: 150%;
     }
@@ -98,7 +101,7 @@ main {
     }
 
     .illustration-card {
-      top: 310px;
+      top: 320px;
       max-width: 300px;
       display: flex;
       align-items: center;
@@ -193,6 +196,7 @@ main {
       background-color: $primaryblue;
       color: #ffffff;
       font-size: 0.8rem;
+      font-weight: 500;
       transition: all 0.2s ease-in-out;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
         rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -202,4 +206,253 @@ main {
       }
     }
   }
+}
+
+.workers-card-section {
+  padding: 48px 0 0px;
+
+  .workers-card-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 150%;
+    margin-bottom: 48px;
+
+    h6 {
+      font-size: 1.563rem;
+      color: $textdarkergrey;
+      line-height: inherit;
+    }
+
+    a {
+      color: $primaryblue;
+      line-height: inherit;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        color: $primarybluedark;
+      }
+    }
+  }
+
+  .workers-card-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    .workers-card {
+      padding: 12px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      transition: all 0.2s ease-in-out;
+
+      img {
+        width: 100%;
+        display: block;
+        aspect-ratio: 1.5;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .workers-card-title {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        line-height: 150%;
+        color: $textblack;
+
+        .worker-name {
+          word-wrap: break-word;
+        }
+        .worker-rate {
+          flex-shrink: 0;
+
+          .worker-rate-type {
+            font-size: 0.64rem;
+            font-weight: 400;
+            color: $textlightgrey;
+          }
+        }
+      }
+
+      .workers-card-subtitle {
+        margin-top: 4px;
+        font-size: 0.8rem;
+        color: $textdarkgrey;
+      }
+
+      .workers-card-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 24px;
+
+        .worker-rating-section,
+        .worker-review-section {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .worker-rating-label,
+          .worker-review-label {
+            font-size: 0.64rem;
+            font-weight: 500;
+            color: $textdarkgrey;
+          }
+          .worker-rating-value,
+          .worker-review-value {
+            margin-top: 8px;
+            font-size: 0.64rem;
+            font-weight: 500;
+            color: $textblack;
+            display: flex;
+            align-items: center;
+          }
+        }
+
+        .view-worker-profile-button-section {
+          .view-worker-profile-button {
+            border: 0;
+            padding: 0;
+            padding: 8px;
+            border-radius: 4px;
+            background-color: $primaryblue;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.64rem;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+              rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+            &:hover {
+              background-color: $primarybluedark;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.articles-section {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-bottom: 96px;
+
+  .article {
+    padding-top: 96px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .article-text {
+      flex: 1;
+      padding-right: 72px;
+      align-self: center;
+      line-height: 150%;
+
+      h3 {
+        font-size: 1.563rem;
+        color: $textblack;
+        margin-bottom: 12px;
+      }
+
+      p {
+        color: $textlightgrey;
+      }
+    }
+
+    .article-image {
+      flex-basis: 58.5%;
+    }
+    img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+  }
+
+  .article:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .article-text {
+      padding: 0;
+      padding-left: 72px;
+    }
+  }
+}
+
+.testimonial-section {
+  padding: 96px 0;
+
+  .testimonial-section-header {
+    h3 {
+      font-size: 1.563rem;
+      color: $textblack;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: $textlightgrey;
+    }
+  }
+
+  .testimonials {
+    margin-top: 24px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+      padding: 24px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+
+      .testimonial-quote {
+        color: $textdarkergrey;
+        line-height: 150%;
+        margin-bottom: 24px;
+      }
+
+      .testimonial-client-section {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 48px;
+          height: 48px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        .testimonial-client-information {
+          margin-left: 12px;
+
+          .client-name {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: $textdarkgrey;
+          }
+          .client-title {
+            font-size: 0.8rem;
+            color: $textlightgrey;
+          }
+        }
+      }
+    }
+  }
+}
+
+.strip {
+  width: 100%;
+  background-color: #e6ebf0;
 }

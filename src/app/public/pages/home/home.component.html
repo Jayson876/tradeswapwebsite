@@ -58,7 +58,7 @@
           </div>
           <div class="hero-statistics-column">
             <span class="hero-statistics-value">1,000</span>
-            <span class="hero-statistics-label">Handymen</span>
+            <span class="hero-statistics-label">workers</span>
           </div>
           <div class="hero-statistics-column">
             <span class="hero-statistics-value">12,000</span>
@@ -66,7 +66,7 @@
           </div>
         </div>
       </article>
-      <article class="hero-illustration">
+      <aside class="hero-illustration">
         <img src="../../../../assets/images/carpenter.jpg" alt="" />
         <img src="../../../../assets/images/mechanic.jpg" alt="" />
         <article class="illustration-card">
@@ -93,7 +93,7 @@
             </p>
           </div>
         </article>
-      </article>
+      </aside>
     </section>
     <section class="search-section">
       <div class="search-bar">
@@ -126,5 +126,133 @@
         <button>Search</button>
       </div>
     </section>
+    <section class="workers-card-section">
+      <header class="workers-card-section-header">
+        <h6>Workers near you</h6>
+        <a href="">view more workers</a>
+      </header>
+      <div class="workers-card-group">
+        <article class="workers-card" *ngFor="let worker of workers">
+          <img src="{{ worker.image }}" alt="" />
+          <div class="workers-card-title">
+            <div class="worker-name">{{ worker.name }}</div>
+            <div class="worker-rate">
+              {{ worker.rate | currency
+              }}<span class="worker-rate-type"
+                >/{{ worker.rateType
+                }}<span *ngIf="worker.rateNegotiable">*</span></span
+              >
+            </div>
+          </div>
+          <div class="workers-card-subtitle">
+            <span>{{ worker.skill }}</span
+            ><span class="line-dot">&bull;</span
+            ><span>{{ worker.location }}</span>
+          </div>
+          <div class="workers-card-details">
+            <div class="worker-rating-section">
+              <div class="worker-rating-label">Rating</div>
+              <div class="worker-rating-value">{{ worker.rating }} &starf;</div>
+            </div>
+            <div class="worker-review-section">
+              <div class="worker-review-label">Reviews</div>
+              <div class="worker-review-value">{{ worker.reviews }}</div>
+            </div>
+            <div class="view-worker-profile-button-section">
+              <a href="" class="view-worker-profile-button">View More</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="articles-section">
+      <article class="article">
+        <aside class="article-text">
+          <h3>Your safety is our priority.</h3>
+          <p>
+            We carry cout multiple interviews, verification processes and
+            background checks to give you qualified workers and the best
+            service.
+          </p>
+        </aside>
+        <div class="article-image">
+          <img src="../../../../assets/images/vetting.jpg" alt="" srcset="" />
+        </div>
+      </article>
+      <article class="article">
+        <aside class="article-text">
+          <h3>More time to get things done.</h3>
+          <p>
+            Let our workers handle the work so you have more time for yourself.
+          </p>
+        </aside>
+        <div class="article-image">
+          <img src="../../../../assets/images/relaxing.jpg" alt="" srcset="" />
+        </div>
+      </article>
+    </section>
+  </div>
+  <div class="strip">
+    <div class="container">
+      <section class="testimonial-section">
+        <header class="testimonial-section-header">
+          <h3>Don't just take our word for it</h3>
+          <p>See how we are saving the day for people like you.</p>
+        </header>
+        <div class="testimonials">
+          <article class="testimonial">
+            <p class="testimonial-quote">
+              Id' have issues in the past with finding a handyman. But now I
+              have ease access to the contact information several workers.
+              Thanks TradeSwap!
+            </p>
+            <div class="testimonial-client-section">
+              <img
+                src="https://news.harvard.edu/wp-content/uploads/2019/07/lprieto2-1200x800.jpg"
+                alt=""
+              />
+              <div class="testimonial-client-information">
+                <div class="client-name">Bruce Williams</div>
+                <div class="client-title">Client</div>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <p class="testimonial-quote">
+              TradeSwap is a saviour! I have many service providers at my
+              fingertip with great customer service! Good Job TradeSwap.
+            </p>
+            <div class="testimonial-client-section">
+              <img
+                src="https://content.presspage.com/uploads/2170/1920_afro-close-up-daylight-818819-768219.jpg?10000"
+                alt=""
+              />
+              <div class="testimonial-client-information">
+                <div class="client-name">Suzette Coke</div>
+                <div class="client-title">Client</div>
+              </div>
+            </div>
+          </article>
+          <article class="testimonial">
+            <p class="testimonial-quote">
+              Thank you TradeSwap. This kind of service was really needeed in
+              Jamaica. It was very difficult for me to find some help. It is
+              much easier now.
+            </p>
+            <div class="testimonial-client-section">
+              <img
+                src="https://static01.nyt.com/images/2022/07/22/books/21DICTIONARY1/21DICTIONARY1-superJumbo.jpg"
+                alt=""
+              />
+              <div class="testimonial-client-information">
+                <div class="client-name">Prince Richards</div>
+                <div class="client-title">Client</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
   </div>
 </main>
+<app-footer></app-footer>

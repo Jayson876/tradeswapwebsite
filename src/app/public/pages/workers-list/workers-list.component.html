@@ -1,5 +1,250 @@
+
 <app-header></app-header>
-<div class="container">
-    <p>workers-list works!</p>  
+<!-- BODY CONTAINER -->
+<div class="my-container">
+
+    <!-- SEARCH BAR -->
+    <section class="search-section">
+        <h1>Search</h1>
+        <div class="search-bar">
+
+          <!-- SEARCH ICON -->
+          <div class="search-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#000000"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+            </svg>
+          </div>
+
+          <!-- LOCATION INPUT -->
+          <div class="search-input">
+            <select name="location" id="location">
+              <option disabled selected>Select Your Location</option>
+              <option value="Kingston, Jamaica">Kingston, Jamaica</option>
+            </select>
+          </div>
+          <!-- CATEGORY INPUT -->
+          <div class="search-input">
+            <select name="location" id="location">
+              <option disabled selected>Worker Category</option>
+            </select>
+          </div>
+  
+          <button>Search</button>
+        </div>
+    </section> 
+
+      <!-- <hr class="body-divider"> -->
+
+    <div class="body-flex">
+
+        <!-- BODY-LEFT / FILTER SECTION -->
+        <div class="body-left">
+            <h2>
+                Skill Categories
+                <!-- <hr class="heading-underline"> -->
+            </h2>
+
+            <div class="category-widgets-contain">
+                <span class="category-widget" *ngFor="let cat of categories">{{cat.catName}}</span>
+            </div>
+
+        </div>
+
+        <!-- BODY RIGHT / WORKERS GRID LIST -->
+        <div class="body-right">
+            <h2>
+                All Tradesmen
+                <hr class="heading-underline">
+            </h2>
+            <div class="worker-cards-container">
+                <div class="worker-card">
+                    <div class="worker-img">
+                        <img src="https://s3.envato.com/files/263323604/MON1213027.jpg" alt="">
+                    </div>
+                    <div class="worker-details">
+                        <div class="name-rate-row">
+                            <div class="worker-name">John Doe</div>
+                            <div class="worker-rate">$10/Hr</div>
+                        </div>
+                        <div class="skill-location">Carpenter | Kingston</div>
+                        <div class="ratings-reviews-row">
+                            <div class="ratings">
+                                <p>Ratings</p>
+                                <p>4.7 <i class="fa-solid fa-star"></i></p>
+                            </div>
+                            <div class="reviews">
+                                <p>Reviews</p>
+                                <p>18 reviews</p>
+                            </div>
+                            <div class="view-more-btn">
+                                <a href="">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-img">
+                        <img src="https://s3.envato.com/files/263323604/MON1213027.jpg" alt="">
+                    </div>
+                    <div class="worker-details">
+                        <div class="name-rate-row">
+                            <div class="worker-name">John Doe</div>
+                            <div class="worker-rate">$10/Hr</div>
+                        </div>
+                        <div class="skill-location">Carpenter | Kingston</div>
+                        <div class="ratings-reviews-row">
+                            <div class="ratings">
+                                <p>Ratings</p>
+                                <p>4.7 <i class="fa-solid fa-star"></i></p>
+                            </div>
+                            <div class="reviews">
+                                <p>Reviews</p>
+                                <p>18 reviews</p>
+                            </div>
+                            <div class="view-more-btn">
+                                <a href="">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-img">
+                        <img src="https://s3.envato.com/files/263323604/MON1213027.jpg" alt="">
+                    </div>
+                    <div class="worker-details">
+                        <div class="name-rate-row">
+                            <div class="worker-name">John Doe</div>
+                            <div class="worker-rate">$10/Hr</div>
+                        </div>
+                        <div class="skill-location">Carpenter | Kingston</div>
+                        <div class="ratings-reviews-row">
+                            <div class="ratings">
+                                <p>Ratings</p>
+                                <p>4.7 <i class="fa-solid fa-star"></i></p>
+                            </div>
+                            <div class="reviews">
+                                <p>Reviews</p>
+                                <p>18 reviews</p>
+                            </div>
+                            <div class="view-more-btn">
+                                <a href="">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-img">
+                        <img src="https://s3.envato.com/files/263323604/MON1213027.jpg" alt="">
+                    </div>
+                    <div class="worker-details">
+                        <div class="name-rate-row">
+                            <div class="worker-name">John Doe</div>
+                            <div class="worker-rate">$10/Hr</div>
+                        </div>
+                        <div class="skill-location">Carpenter | Kingston</div>
+                        <div class="ratings-reviews-row">
+                            <div class="ratings">
+                                <p>Ratings</p>
+                                <p>4.7 <i class="fa-solid fa-star"></i></p>
+                            </div>
+                            <div class="reviews">
+                                <p>Reviews</p>
+                                <p>18 reviews</p>
+                            </div>
+                            <div class="view-more-btn">
+                                <a href="">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-img">
+                        <img src="https://s3.envato.com/files/263323604/MON1213027.jpg" alt="">
+                    </div>
+                    <div class="worker-details">
+                        <div class="name-rate-row">
+                            <div class="worker-name">John Doe</div>
+                            <div class="worker-rate">$10/Hr</div>
+                        </div>
+                        <div class="skill-location">Carpenter | Kingston</div>
+                        <div class="ratings-reviews-row">
+                            <div class="ratings">
+                                <p>Ratings</p>
+                                <p>4.7 <i class="fa-solid fa-star"></i></p>
+                            </div>
+                            <div class="reviews">
+                                <p>Reviews</p>
+                                <p>18 reviews</p>
+                            </div>
+                            <div class="view-more-btn">
+                                <a href="">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-img">
+                        <img src="https://s3.envato.com/files/263323604/MON1213027.jpg" alt="">
+                    </div>
+                    <div class="worker-details">
+                        <div class="name-rate-row">
+                            <div class="worker-name">John Doe</div>
+                            <div class="worker-rate">$10/Hr</div>
+                        </div>
+                        <div class="skill-location">Carpenter | Kingston</div>
+                        <div class="ratings-reviews-row">
+                            <div class="ratings">
+                                <p>Ratings</p>
+                                <p>4.7 <i class="fa-solid fa-star"></i></p>
+                            </div>
+                            <div class="reviews">
+                                <p>Reviews</p>
+                                <p>18 reviews</p>
+                            </div>
+                            <div class="view-more-btn">
+                                <a href="">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="worker-card">
+                    <div class="worker-img">
+                        <img src="https://s3.envato.com/files/263323604/MON1213027.jpg" alt="">
+                    </div>
+                    <div class="worker-details">
+                        <div class="name-rate-row">
+                            <div class="worker-name">John Doe</div>
+                            <div class="worker-rate">$10/Hr</div>
+                        </div>
+                        <div class="skill-location">Carpenter | Kingston</div>
+                        <div class="ratings-reviews-row">
+                            <div class="ratings">
+                                <p>Ratings</p>
+                                <p>4.7 <i class="fa-solid fa-star"></i></p>
+                            </div>
+                            <div class="reviews">
+                                <p>Reviews</p>
+                                <p>18 reviews</p>
+                            </div>
+                            <div class="view-more-btn">
+                                <a href="">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
     
 </div>

@@ -12,6 +12,7 @@ import { MaterialsModule } from './public/modules/materials/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ClientRegistrationComponent } from './public/pages/registration/client-registration/client-registration.component';
 import { TradesmanRegistrationComponent } from './public/pages/registration/tradesman-registration/tradesman-registration.component';
+import { FooterComponent } from './public/partials/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TradesmanRegistrationComponent } from './public/pages/registration/trad
     WorkersListComponent,
     ClientRegistrationComponent,
     TradesmanRegistrationComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
