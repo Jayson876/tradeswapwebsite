@@ -7,7 +7,7 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./tradesman-registration.component.scss']
 })
 export class TradesmanRegistrationComponent {
-
+// not requiring files for form completion for now
   firstFormGroup = this._formBuilder.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -17,9 +17,22 @@ export class TradesmanRegistrationComponent {
     cellNumber: ['', Validators.required],
   });
   secondFormGroup = this._formBuilder.group({
+    profilePhoto: ['', Validators.required],
+    aboutMe: ['', Validators.required],
+  });
+  thirdFormGroup = this._formBuilder.group({
+    skill: ['', Validators.required],
+    rate: ['', Validators.required],
+  });
+  fourthFormGroup = this._formBuilder.group({
     parish: ['', Validators.required],
   });
-
+  
+  fifthFormGroup = this._formBuilder.group({
+    idUpload: ['', Validators.required],
+    selfieUpload: ['', Validators.required],
+  });
+  
   get firstName() {
     return this.firstFormGroup.get('firstName')?.value;
   }
@@ -42,11 +55,11 @@ export class TradesmanRegistrationComponent {
   get parish() {
     return this.secondFormGroup.get('parish')?.value;
   }
-
-
+  
+  // set this to false if you want to go through the stepper freely
   isLinear = true;
-
-  // dummy value for parish
+  
+  // dummy value for parish and skill
   // pull from db
   parishes =[
     {id:1,name:"Kingston"},
@@ -56,6 +69,29 @@ export class TradesmanRegistrationComponent {
     {id:5,name:"St. Elisabeth"},
     {id:6,name:"Westmoreland"},
   ]
+  skills =[
+    {id:1,name:"Plumming"},
+    {id:2,name:"Masonry"},
+    {id:3,name:"Electrical"},
+  ]
+  // this would be the file....
+  srcResult: any;
+  // files are going to be hard to work with
+  //  reference is here if you want to try
+  // https://stackoverflow.com/questions/52622061/how-to-use-input-type-file-in-angular-material
+  onFileSelected() {
+    const inputNode: any = document.querySelector('#file');
+    
+    if (typeof (FileReader) !== 'undefined') {
+      const reader = new FileReader();
+  
+      reader.onload = (e: any) => {
+        this.srcResult = e.target.result;
+      };
+  
+      reader.readAsArrayBuffer(inputNode.files[0]);
+    }
+  }
 
 
 
