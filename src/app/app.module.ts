@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ClientRegistrationComponent } from './public/pages/registration/client-registration/client-registration.component';
 import { TradesmanRegistrationComponent } from './public/pages/registration/tradesman-registration/tradesman-registration.component';
 import { FooterComponent } from './public/partials/footer/footer.component';
+import { WorkersComponent } from './public/pages/workers/workers.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,12 @@ import { FooterComponent } from './public/partials/footer/footer.component';
     ContactusComponent,
     HeaderComponent,
     WorkersListComponent,
+
     ClientRegistrationComponent,
     TradesmanRegistrationComponent
     FooterComponent
+    WorkersComponent
+
   ],
   imports: [
     BrowserModule,
