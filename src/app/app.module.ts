@@ -8,7 +8,8 @@ import { ContactusComponent } from './public/pages/contactus/contactus.component
 import { HeaderComponent } from './public/partials/header/header.component';
 import { WorkersListComponent } from './public/pages/workers-list/workers-list.component';
 import { SignInComponent } from './public/pages/sign-in/sign-in.component';
-
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,9 @@ import { SignInComponent } from './public/pages/sign-in/sign-in.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
