@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="container">
+  <div class="left-side">
+    <div class="image">
+      <img src="../../../../assets/images/pexels-tima-miroshnichenko-5845946.jpeg" alt="carpenter">
+    </div>
+  </div>
+  <div class="right-side">
+    <h1>Login</h1>
+    <form name="form" #form="ngForm" (ngSubmit)="form.form.valid && onSubmit()" novalidate>
+
+      <div class="form-group">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  id="inputEmail4">
+        <label for="email">Email</label>
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password"[ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="inputPassword4">
+        <label for="password">Password</label>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+
+    </form>
+    <div class="btn-section">
+      <button type="submit" class="btn btn-primary">Login</button>
+      <a href="/" class="sign-up">Dont have an Account?</a>
+    </div>
+  </div>
+</div>

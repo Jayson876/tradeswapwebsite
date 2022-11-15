@@ -1,0 +1,114 @@
+@import "../../../../assets/util/colors.scss";
+
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  top: 12px;
+}
+
+.left-side .image img{
+  width: 29rem;
+}
+
+.container .right-side {
+  position: relative;
+  bottom: -12rem;
+  left: 15px;
+  height: 27rem;
+}
+
+.container .right-side h1 {
+  text-align: center;
+}
+
+form {
+  margin: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 4em;
+  width: 32rem;
+}
+
+label, input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input {
+  font-size: 1.5em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  appearance: none;
+  border-radius: 0;
+  padding: 10px;
+  cursor: text;
+}
+
+input:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+input:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+input:not(:placeholder-shown) + label,
+input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+.btn-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.login-btn {
+  padding: 8px 18px;
+  border-radius: 4px;
+  background-color: $primaryblue;
+  // position: relative;
+  // left: 35px;
+  color: #ffffff;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+  &:hover {
+    background-color: $primarybluedark;
+  }
+}
+
+
+.sign-up {
+  text-decoration: none;
+  color: black;
+}

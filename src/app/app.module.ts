@@ -7,6 +7,10 @@ import { HomeComponent } from './public/pages/home/home.component';
 import { ContactusComponent } from './public/pages/contactus/contactus.component';
 import { HeaderComponent } from './public/partials/header/header.component';
 import { WorkersListComponent } from './public/pages/workers-list/workers-list.component';
+
+import { SignInComponent } from './public/pages/sign-in/sign-in.component';
+import { FormsModule } from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialsModule } from './public/modules/materials/materials.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +27,9 @@ import { WorkersComponent } from './public/pages/workers/workers.component';
     HeaderComponent,
     WorkersListComponent,
 
+    SignInComponent
+
+
     ClientRegistrationComponent,
     TradesmanRegistrationComponent
     FooterComponent
@@ -32,9 +39,13 @@ import { WorkersComponent } from './public/pages/workers/workers.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    FormsModule,
+    ReactiveFormsModule
+
     MaterialsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
