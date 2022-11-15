@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
-import { MatTableModule } from '@angular/material/table';
+import {MatStepperModule} from '@angular/material/stepper';
 
 const material = [
   MatInputModule,
@@ -19,7 +19,7 @@ const material = [
   MatCardModule,
   MatOptionModule,
   MatSelectModule,
-  MatTableModule,
+  MatStepperModule,
 ];
 // Common Module Exports all the basic Angular directives and pipes, such as NgIf, NgForOf, DecimalPipe, and so on.
 @NgModule({
