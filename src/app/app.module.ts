@@ -19,7 +19,6 @@ import { TradesmanRegistrationComponent } from './public/pages/registration/trad
 import { FooterComponent } from './public/partials/footer/footer.component';
 import { WorkersComponent } from './public/pages/workers/workers.component';
 import { ScrollDirective } from './public/directives/scroll.directive';
-import { ClickDirective } from './public/directives/click.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,7 @@ import { ClickDirective } from './public/directives/click.directive';
     FooterComponent,
     WorkersComponent,
     ScrollDirective,
-    ClickDirective,
+
   ],
   imports: [
     BrowserModule,
