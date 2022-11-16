@@ -18,6 +18,8 @@ import { ClientRegistrationComponent } from './public/pages/registration/client-
 import { TradesmanRegistrationComponent } from './public/pages/registration/tradesman-registration/tradesman-registration.component';
 import { FooterComponent } from './public/partials/footer/footer.component';
 import { WorkersComponent } from './public/pages/workers/workers.component';
+import { ScrollDirective } from './public/directives/scroll.directive';
+import { ClickDirective } from './public/directives/click.directive';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { WorkersComponent } from './public/pages/workers/workers.component';
     TradesmanRegistrationComponent,
     FooterComponent,
     WorkersComponent,
+    ScrollDirective,
+    ClickDirective,
   ],
   imports: [
     BrowserModule,

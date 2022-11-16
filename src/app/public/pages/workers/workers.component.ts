@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { categories } from 'src/app/worker-categories';
 
 @Component({
@@ -6,10 +12,13 @@ import { categories } from 'src/app/worker-categories';
   templateUrl: './workers.component.html',
   styleUrls: ['./workers.component.scss'],
 })
-export class WorkersComponent implements OnInit {
+export class WorkersComponent implements OnInit, AfterViewInit {
   categories = categories;
   currentPage = 0;
   pageLimit = 8;
+
+  @ViewChild('ele1') ele1!: ElementRef;
+  @ViewChild('tabbox') tabbox!: HTMLDivElement;
   constructor() {}
 
   changePage(event: any) {
@@ -489,5 +498,8 @@ export class WorkersComponent implements OnInit {
       reviews: 61,
     },
   ];
+
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {}
 }

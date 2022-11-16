@@ -6,42 +6,42 @@ export interface WorkCategories {
 export const categories = [
   {
     id: 1,
-    catName: 'Architect',
+    catName: 'Architects',
   },
   {
     id: 2,
-    catName: 'Carpenter',
+    catName: 'Carpenters',
   },
   {
     id: 3,
-    catName: 'Cleaner',
+    catName: 'Cleaners',
   },
   {
     id: 4,
-    catName: 'Constructor',
+    catName: 'Construction Workers',
   },
   {
     id: 5,
-    catName: 'Electrician',
+    catName: 'Electricians',
   },
   {
     id: 6,
-    catName: 'Mechanic',
+    catName: 'Mechanics',
   },
   {
     id: 7,
-    catName: 'Painter',
+    catName: 'Painters',
   },
   {
     id: 8,
-    catName: 'Plumber',
+    catName: 'Plumbers',
   },
   {
     id: 9,
-    catName: 'Welder',
+    catName: 'Welders',
   },
   {
     id: 10,
-    catName: 'Welder',
+    catName: 'Masons',
   },
 ];

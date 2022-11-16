@@ -33,6 +33,7 @@
           <div class="search-input">
             <select name="location" id="location">
               <option disabled selected>Worker Category</option>
+              <option *ngFor="let cat of categories" value="{{cat.catName}}">{{cat.catName}}</option>
             </select>
           </div>
 
@@ -406,14 +407,26 @@
         </button>
       </div>
       <div class="controls-bottom">
-        <span class="category-widget" *ngFor="let cat of categories">{{
-          cat.catName
-        }}</span>
+        <div class="category-scroller" >
+          <div class="category-widgets" appScroll>
+            <span class="category-widget" *ngFor="let cat of categories">{{
+              cat.catName
+            }}</span>
+          </div>
+        </div>
       </div>
     </section>
     <section class="workers-card-section">
       <div class="workers-card-group">
-        <article class="workers-card" *ngFor="let worker of workers  | slice: currentPage * pageLimit:currentPage * pageLimit + pageLimit">
+        <article
+          class="workers-card"
+          *ngFor="
+            let worker of workers
+              | slice
+                : currentPage * pageLimit
+                : currentPage * pageLimit + pageLimit
+          "
+        >
           <img src="{{ worker.image }}" alt="" />
           <div class="workers-card-title">
             <div class="worker-name">{{ worker.name }}</div>
@@ -448,17 +461,16 @@
           </div>
         </article>
       </div>
-<div class="paginator">
-      <mat-paginator
-
-        [length]="workers.length"
-        [pageSize]="pageLimit"
-        [pageSizeOptions]="[4, 8, 12, 48, 96]"
-        (page)="changePage($event)"
-        aria-label="Select page"
-      >
-      </mat-paginator>
-</div>
+      <div class="paginator">
+        <mat-paginator
+          [length]="workers.length"
+          [pageSize]="pageLimit"
+          [pageSizeOptions]="[4, 8, 12, 48, 96]"
+          (page)="changePage($event)"
+          aria-label="Select page"
+        >
+        </mat-paginator>
+      </div>
     </section>
   </div>
 </main>
