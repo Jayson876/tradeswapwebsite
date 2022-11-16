@@ -15,7 +15,12 @@
           [routerLinkActiveOptions]="{ exact: true }"
           >Find A Tradesman</a
         >
-        <a href="">Contact Us</a>
+                <a
+          [routerLink]="['/contact']"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Contact Us</a
+        >
       </nav>
     </section>
   </div>

@@ -1,3 +1,4 @@
+import { ContactusComponent } from './public/pages/contactus/contactus.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './public/pages/home/home.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'workers2', component: WorkersListComponent },
   { path: 'signin', component: SignInComponent },
   { path: 'workers', component: WorkersComponent },
+  { path: 'contact', component: ContactusComponent },
   { path: 'registration-client', component: ClientRegistrationComponent },
   { path: 'registration-tradesman', component: TradesmanRegistrationComponent },
   { path: '**', redirectTo: 'home' },

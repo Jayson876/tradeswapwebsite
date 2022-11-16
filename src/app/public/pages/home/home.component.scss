@@ -244,6 +244,20 @@ main {
       border-radius: 8px;
       background-color: #ffffff;
       transition: all 0.2s ease-in-out;
+      position: relative;
+
+      .location-badge {
+        top: 16px;
+        left: 16px;
+        position: absolute;
+        padding: 4px 12px;
+        border-radius: 4px;
+        background-color: #ffffff;
+        font-weight: 500;
+        color: $textdarkgrey;
+        font-size: 0.64rem;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+      }
 
       img {
         width: 100%;
@@ -265,8 +279,33 @@ main {
         .worker-name {
           word-wrap: break-word;
         }
+        .worker-contact {
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          font-size: 0.8rem;
+          span {
+            display: flex;
+            align-items: center;
+            svg {
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+
+      .workers-card-subtitle {
+        margin-top: 4px;
+        font-weight: 500;
+        font-size: 0.64rem;
+        color: $textdarkgrey;
+        display: flex;
+        justify-content: space-between;
+
         .worker-rate {
           flex-shrink: 0;
+          font-weight: 500;
+          color: $textblack;
 
           .worker-rate-type {
             font-size: 0.64rem;
@@ -274,12 +313,6 @@ main {
             color: $textlightgrey;
           }
         }
-      }
-
-      .workers-card-subtitle {
-        margin-top: 4px;
-        font-size: 0.8rem;
-        color: $textdarkgrey;
       }
 
       .workers-card-details {
@@ -296,6 +329,7 @@ main {
 
           .worker-rating-label,
           .worker-review-label {
+            flex: 1;
             font-size: 0.64rem;
             font-weight: 500;
             color: $textdarkgrey;
@@ -308,9 +342,11 @@ main {
             color: $textblack;
             display: flex;
             align-items: center;
+            display: flex;
+            align-items: center;
 
             .rating-star {
-              margin-top: -2px;
+              margin-top: -1px;
               margin-left: 2px;
               color: $accentyellow;
             }
