@@ -1,0 +1,44 @@
+.container{
+    background-image:url('/assets/picture.jpeg');
+    background-size: cover;
+    width:100%;
+    height:100vh;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    // margin-bottom: 50%;
+}
+
+// .container p {
+//     font-size: large;
+// }
+
+
+.main-form{
+    border: 1px solid black; 
+    border-radius: 6px; 
+    margin-left: 20px; 
+    width: 400px;
+    height: 450px; 
+    padding: 30px;
+    text-align: center;
+    background-color: white;
+    opacity: 80%;
+    
+}
+
+.main-form input{
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding-bottom:5px ;
+    padding-top:20px ;
+    
+}
+
+label{
+    
+}
