@@ -1,0 +1,205 @@
+@import "../../../../assets/util/colors.scss";
+
+main {
+  width: 100%;
+}
+.navigate-to-last {
+  width: 100%;
+  padding: 48px 0 24px;
+
+  button {
+    border: 0;
+    background: none;
+    padding: 0;
+    color: $primaryblue;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+
+    svg {
+      transition: all 0.2s ease-in-out;
+      fill: $primaryblue;
+    }
+    &:hover {
+      color: $primarybluedark;
+      text-decoration: underline;
+
+      svg {
+        fill: $primarybluedark;
+      }
+    }
+  }
+}
+
+.profile-card-section {
+  width: 100%;
+  padding: 24px;
+  margin-bottom: 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+
+  .profile-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    .profile-card-left {
+      padding: 12px 24px 12px 0;
+      border-right: 1px solid $lightblue;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      .profile-picture {
+        img {
+          display: block;
+          width: 160px;
+          height: 160px;
+          border-radius: 50%;
+          object-fit: cover;
+          box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+        }
+      }
+      .profile-information {
+        margin-top: 12px;
+        padding-left: 24px;
+        display: flex;
+        flex-direction: column;
+        line-height: 150%;
+
+        .profile-name {
+          font-size: 1.563rem;
+          line-height: 125%;
+          font-weight: 600;
+          color: $textdarkergrey;
+        }
+
+        .profile-rate {
+          margin-top: 4px;
+          font-size: 1rem;
+          font-weight: 600;
+          color: green;
+
+          .profile-rate-type {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: $textlightgrey;
+
+            .neg-icon {
+              margin-left: 4px;
+            }
+          }
+        }
+
+        .profile-skill {
+          margin-top: 8px;
+          color: $textlightgrey;
+
+          svg {
+            margin-right: 4px;
+            fill: $textlightgrey;
+          }
+        }
+        .profile-contact {
+          span svg {
+            margin-right: 4px;
+          }
+        }
+        .profile-location {
+          margin-top: 8px;
+          color: $textlightgrey;
+          svg {
+            margin-right: 4px;
+            fill: $textlightgrey;
+          }
+        }
+      }
+    }
+
+    .profile-card-right {
+      padding: 12px 24px;
+
+      .profile-card-bio-label {
+        margin-top: 20px;
+        font-weight: 600;
+        font-size: 0.65rem;
+        color: $textdarkgrey;
+        text-transform: uppercase;
+      }
+      .profile-card-bio {
+        margin-top: 12px;
+        font-size: 0.65rem;
+        line-height: 150%;
+        color: $textlightgrey;
+      }
+
+      .profile-card-bio-section {
+        .workers-card-details {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 24px;
+
+          .worker-review-section {
+            margin-left: 48px;
+          }
+
+          .worker-rating-section,
+          .worker-review-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .worker-rating-label,
+            .worker-review-label {
+              font-size: 0.64rem;
+              font-weight: 600;
+              text-transform: uppercase;
+              color: $textdarkgrey;
+            }
+            .worker-rating-value,
+            .worker-review-value {
+              flex: 1;
+              margin-top: 8px;
+              font-size: 0.64rem;
+              font-weight: 500;
+              color: $textblack;
+              display: flex;
+              align-items: center;
+              display: flex;
+              align-items: center;
+
+              .rating-star {
+                margin-left: 2px;
+                color: $accentyellow;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//util
+.width-100 {
+  width: 100%;
+}
+.flex {
+  display: flex;
+}
+.space-between {
+  justify-content: space-between;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.align-start {
+  align-items: flex-start;
+}
+.align-center {
+  align-items: center;
+}

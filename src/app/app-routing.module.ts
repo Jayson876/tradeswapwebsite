@@ -1,3 +1,4 @@
+import { TradesmanProfileComponent } from './public/pages/tradesman-profile/tradesman-profile.component';
 import { ContactusComponent } from './public/pages/contactus/contactus.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'signin', component: SignInComponent },
   { path: 'workers', component: WorkersComponent },
   { path: 'contact', component: ContactusComponent },
+  { path: ':id/profile', component: TradesmanProfileComponent },
   { path: 'registration-client', component: ClientRegistrationComponent },
   { path: 'registration-tradesman', component: TradesmanRegistrationComponent },
   { path: '**', redirectTo: 'home' },
