@@ -35,7 +35,7 @@ main {
 .profile-card-section {
   width: 100%;
   padding: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
@@ -163,8 +163,8 @@ main {
               flex: 1;
               margin-top: 8px;
               font-size: 0.64rem;
-              font-weight: 500;
-              color: $textblack;
+              font-weight: 600;
+              color: $textdarkergrey;
               display: flex;
               align-items: center;
               display: flex;

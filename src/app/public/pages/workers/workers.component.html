@@ -23,12 +23,12 @@
           </div>
 
           <!-- LOCATION INPUT -->
-          <!-- <div class="search-input">
+          <div class="search-input">
             <select name="location" id="location">
               <option disabled selected>Select Your Location</option>
               <option value="Kingston, Jamaica">Kingston, Jamaica</option>
             </select>
-          </div> -->
+          </div>
           <!-- CATEGORY INPUT -->
           <div class="search-input">
             <select name="location" id="location">
@@ -527,7 +527,7 @@
               <div class="worker-review-value">{{ worker.reviews }}</div>
             </div>
             <div class="view-worker-profile-button-section">
-              <a href="" class="view-worker-profile-button">View More</a>
+              <a [routerLink]="['/{{worker.id}}/profile']" class="view-worker-profile-button">View More</a>
             </div>
           </div>
         </article>

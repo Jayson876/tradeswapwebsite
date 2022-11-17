@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
       image:
         'https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80',
       skill: 'Carpenter',
-      location: 'Kingston',
+      location: 'St. Catherine',
       rate: 7500,
       rateType: 'Day',
       rateNegotiable: true,
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
       image:
         'https://www.neit.edu/wp-content/uploads/2021/06/Types-of-Electricians-1024x633.jpg',
       skill: 'Electrician',
-      location: 'Kingston',
+      location: 'St. James',
       rate: 3500,
       rateType: 'Job',
       rateNegotiable: true,
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
       cell: '8768736523',
       image: 'https://www.orkin.com.jm/wp-content/uploads/2018/09/image2.jpg',
       skill: 'Pest Control',
-      location: 'Kingston',
+      location: 'Westmoreland',
       rate: 5500,
       rateType: 'Job',
       rateNegotiable: true,

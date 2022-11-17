@@ -9,6 +9,7 @@ import { ClientRegistrationComponent } from './public/pages/registration/client-
 import { TradesmanRegistrationComponent } from './public/pages/registration/tradesman-registration/tradesman-registration.component';
 import { WorkersComponent } from './public/pages/workers/workers.component';
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'workers2', component: WorkersListComponent },
@@ -22,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
