@@ -20,6 +20,7 @@ import { FooterComponent } from './public/partials/footer/footer.component';
 import { WorkersComponent } from './public/pages/workers/workers.component';
 import { ScrollDirective } from './public/directives/scroll.directive';
 import { TradesmanProfileComponent } from './public/pages/tradesman-profile/tradesman-profile.component';
+import { ContactComponent } from './public/pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { TradesmanProfileComponent } from './public/pages/tradesman-profile/trad
     WorkersComponent,
     ScrollDirective,
     TradesmanProfileComponent,
+    ContactComponent,
 
   ],
   imports: [

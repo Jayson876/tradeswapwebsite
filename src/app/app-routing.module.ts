@@ -8,6 +8,7 @@ import { SignInComponent } from './public/pages/sign-in/sign-in.component';
 import { ClientRegistrationComponent } from './public/pages/registration/client-registration/client-registration.component';
 import { TradesmanRegistrationComponent } from './public/pages/registration/tradesman-registration/tradesman-registration.component';
 import { WorkersComponent } from './public/pages/workers/workers.component';
+import { ContactComponent } from './public/pages/contact/contact.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'workers2', component: WorkersListComponent },
   { path: 'signin', component: SignInComponent },
   { path: 'workers', component: WorkersComponent },
-  { path: 'contact', component: ContactusComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'contact2', component: ContactusComponent },
   { path: ':id/profile', component: TradesmanProfileComponent },
   { path: 'registration-client', component: ClientRegistrationComponent },
   { path: 'registration-tradesman', component: TradesmanRegistrationComponent },
