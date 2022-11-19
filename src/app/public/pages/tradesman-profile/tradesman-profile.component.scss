@@ -118,7 +118,11 @@ main {
     }
 
     .profile-card-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding: 12px 24px;
+      height: 100%;
 
       .profile-card-bio-label {
         margin-top: 20px;
@@ -135,11 +139,19 @@ main {
       }
 
       .profile-card-bio-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+
+        bio {
+          flex: 1;
+        }
+
         .workers-card-details {
           display: flex;
           justify-content: flex-start;
           align-items: center;
-          margin-top: 24px;
 
           .worker-review-section {
             margin-left: 48px;
