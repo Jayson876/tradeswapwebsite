@@ -119,7 +119,7 @@
         </div>
         <div class="search-input">
           <select name="location" id="location">
-            <option disabled selected>Worker Category</option>
+            <option disabled selected>Category</option>
           </select>
         </div>
 
@@ -128,8 +128,8 @@
     </section>
     <section class="workers-card-section">
       <header class="workers-card-section-header">
-        <h6>Workers near you</h6>
-        <a href="">view more workers</a>
+        <h6>Explore our list of artisans</h6>
+        <a [routerLink]="['/workers']">view more workers</a>
       </header>
       <div class="workers-card-group">
         <article class="workers-card" *ngFor="let worker of workers | slice: 0:4">

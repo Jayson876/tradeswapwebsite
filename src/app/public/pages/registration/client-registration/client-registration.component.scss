@@ -1,17 +1,88 @@
+@import "../../../../../assets/util/colors.scss";
+
+.form-title {
+  font-size: 1.563rem;
+  line-height: 125%;
+  color: $textdarkergrey;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: $primaryblue;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
+  background-color: $primaryblue;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline {
+  color: $primaryblue;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-label {
+  color: $textdarkgrey;
+}
+
+::ng-deep .mat-raised-button {
+  margin-right: 12px !important;
+  background-color: $primaryblue;
+  color: #ffffff;
+}
+::ng-deep .mat-button {
+  margin-right: 12px !important;
+}
+.registration-form-section {
+  padding: 48px 24px;
+  margin: 48px 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+}
+
 .mat-stepper-vertical {
-    margin-top: 8px;
+  margin-top: 8px;
+}
+
+.mat-form-field {
+  margin-top: 16px;
+}
+
+form {
+  display: grid;
+  .half-content {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 2rem;
   }
-  
-  .mat-form-field {
-    margin-top: 16px;
+}
+
+.success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 48px;
+  background-color: $lightblue;
+  width: 100%;
+  padding: 48px;
+  border-radius: 8px;
+  box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+
+  .success-message-large {
+    text-align: center;
+    font-size: 1.563rem;
+    font-weight: 500;
+    line-height: 125%;
+    color: $textblack;
   }
 
-  form{
-    display: grid;
-    .half-content{
-        display: grid;
-        grid-auto-flow: column;
-        column-gap: 2rem;
-    }
+  .success-message-small {
+    margin-top: 4px;
+    color: $textdarkgrey;
+    font-weight: 500;
+    line-height: 150%;
+    margin-bottom: 48px;
   }
-  
+}

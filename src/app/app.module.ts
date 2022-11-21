@@ -19,6 +19,8 @@ import { TradesmanRegistrationComponent } from './public/pages/registration/trad
 import { FooterComponent } from './public/partials/footer/footer.component';
 import { WorkersComponent } from './public/pages/workers/workers.component';
 import { ScrollDirective } from './public/directives/scroll.directive';
+import { TradesmanProfileComponent } from './public/pages/tradesman-profile/tradesman-profile.component';
+import { ContactComponent } from './public/pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { ScrollDirective } from './public/directives/scroll.directive';
     FooterComponent,
     WorkersComponent,
     ScrollDirective,
+    TradesmanProfileComponent,
+    ContactComponent,
 
   ],
   imports: [
