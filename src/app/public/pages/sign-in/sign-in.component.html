@@ -1,36 +1,47 @@
 <app-header></app-header>
+<div class="body">
 
 <div class="container">
   <div class="left-side">
-    <div class="image">
-      <img src="../../../../assets/images/pexels-tima-miroshnichenko-5845946.jpeg" alt="carpenter">
+    <div class="left-side-contain">
+      <div class="left-side-txt">
+        <h1>Welcome Back!</h1>
+        <p>Sign in to access your account.</p>
+      </div>
+      <div class="image">
+        <img src="../../../../assets/images/request-worker-form_feature_675x675-675x675.png" alt="carpenter">
+      </div>
     </div>
   </div>
   <div class="right-side">
-    <h1>Login</h1>
     <form name="form" #form="ngForm" (ngSubmit)="form.form.valid && onSubmit()" novalidate>
+      <h1>Login</h1>
 
       <div class="form-group">
+        <label for="email">Email</label><br>
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  id="inputEmail4">
-        <label for="email">Email</label>
         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">Email is required</div>
-          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+          <div class="error" *ngIf="f.email.errors.required">Email is required</div>
+          <div class="error" *ngIf="f.email.errors.email">Email must be a valid email address</div>
         </div>
       </div>
 
       <div class="form-group">
+        <label for="password">Password</label><br>
         <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="password"[ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="inputPassword4">
-        <label for="password">Password</label>
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">Password is required</div>
+        <div class="error"  *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div class="error"  *ngIf="f.password.errors.required">Password is required</div>
         </div>
       </div>
 
-    </form>
-    <div class="btn-section">
-      <button type="submit" class="btn btn-primary">Login</button>
+      <!-- <a href="/" class="sign-up">Forgot password?</a> -->
+      <div class="btn-section">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
       <a href="/" class="sign-up">Dont have an Account?</a>
-    </div>
+    </form>
   </div>
 </div>
+</div>
+<!-- <app-footer></app-footer> -->
+
