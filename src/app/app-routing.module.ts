@@ -9,9 +9,11 @@ import { ClientRegistrationComponent } from './public/pages/registration/client-
 import { TradesmanRegistrationComponent } from './public/pages/registration/tradesman-registration/tradesman-registration.component';
 import { WorkersComponent } from './public/pages/workers/workers.component';
 import { ContactComponent } from './public/pages/contact/contact.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 
 
 const routes: Routes = [
+  // client routes
   { path: '', component: HomeComponent },
   { path: 'workers2', component: WorkersListComponent },
   { path: 'signin', component: SignInComponent },
@@ -22,6 +24,10 @@ const routes: Routes = [
   { path: 'registration-client', component: ClientRegistrationComponent },
   { path: 'registration-tradesman', component: TradesmanRegistrationComponent },
   { path: '**', redirectTo: 'home' },
+
+  // admin routes
+  {path: 'admin/home', component: AdminHomeComponent },
+  // {path: 'admin'}
 ];
 
 @NgModule({

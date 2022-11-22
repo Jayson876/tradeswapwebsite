@@ -1,0 +1,28 @@
+<nav class="nav">
+  <a href="#" class="nav__logo">
+    <img
+          src="../../../../assets/images/Trade-Swap-logo-wide-removebg-preview.png"
+          alt=""
+          srcset=""
+        />
+  </a>
+  <ul class="nav__list">
+    <li class="nav__list-item">
+      <a [routerLink]="['/admin/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav__item-link">Dashboard</a>
+    </li>
+    <li class="nav__list-item nav__list-item--active">
+      <a href="#" class="nav__item-link">
+        Add Tradesman
+      </a>
+    </li>
+    <li class="nav__list-item">
+      <a href="#" class="nav__item-link">View Client</a>
+    </li>
+    <li class="nav__list-item">
+      <a href="#" class="nav__item-link">Logout</a>
+    </li>
+  </ul>
+</nav>

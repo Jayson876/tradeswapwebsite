@@ -21,6 +21,9 @@ import { WorkersComponent } from './public/pages/workers/workers.component';
 import { ScrollDirective } from './public/directives/scroll.directive';
 import { TradesmanProfileComponent } from './public/pages/tradesman-profile/tradesman-profile.component';
 import { ContactComponent } from './public/pages/contact/contact.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
+import { AddTradesmanComponent } from './admin/add-tradesman/add-tradesman.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,9 @@ import { ContactComponent } from './public/pages/contact/contact.component';
     ScrollDirective,
     TradesmanProfileComponent,
     ContactComponent,
+    AdminHomeComponent,
+    AdminNavComponent,
+    AddTradesmanComponent,
 
   ],
   imports: [
