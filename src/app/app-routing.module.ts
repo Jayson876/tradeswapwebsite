@@ -10,6 +10,10 @@ import { TradesmanRegistrationComponent } from './public/pages/registration/trad
 import { WorkersComponent } from './public/pages/workers/workers.component';
 import { ContactComponent } from './public/pages/contact/contact.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { AddTradesmanComponent } from './admin/add-tradesman/add-tradesman.component';
+import { EditTradesmanComponent } from './admin/edit-tradesman/edit-tradesman.component';
+import { ViewTradesmanComponent } from './admin/view-tradesman/view-tradesman.component';
+import { ViewClientComponent } from './admin/view-client/view-client.component';
 
 
 const routes: Routes = [
@@ -27,7 +31,10 @@ const routes: Routes = [
 
   // admin routes
   {path: 'admin/home', component: AdminHomeComponent },
-  // {path: 'admin'}
+  {path: 'admin/add-tradesman', component: AddTradesmanComponent },
+  {path: 'admin/edit-tradesman', component: EditTradesmanComponent},
+  {path: 'admin/view-tradesman', component: ViewTradesmanComponent},
+  {path: 'admin/view-client', component: ViewClientComponent}
 ];
 
 @NgModule({

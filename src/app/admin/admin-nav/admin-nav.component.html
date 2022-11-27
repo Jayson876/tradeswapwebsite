@@ -14,15 +14,32 @@
       class="nav__item-link">Dashboard</a>
     </li>
     <li class="nav__list-item nav__list-item--active">
-      <a href="#" class="nav__item-link">
+      <a [routerLink]="['/admin/add-tradesman']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav__item-link">
         Add Tradesman
       </a>
     </li>
-    <li class="nav__list-item">
-      <a href="#" class="nav__item-link">View Client</a>
+    <li class="nav__list-item nav__list-item--active">
+      <a [routerLink]="['/admin/view-tradesman']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav__item-link">
+        View Tradesman
+      </a>
     </li>
     <li class="nav__list-item">
-      <a href="#" class="nav__item-link">Logout</a>
+      <a [routerLink]="['/admin/view-client']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav__item-link">View Client</a>
+    </li>
+    <li class="nav__list-item">
+      <a [routerLink]="['/admin/home']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="nav__item-link">Logout</a>
     </li>
   </ul>
 </nav>

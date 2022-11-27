@@ -6,12 +6,14 @@
         <ul class="utility-bar__list">
           <li class="utility-bar__list-item">
             <a href="#" class="utility-bar__item-link">
+
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" baseProfile="tiny" x="0px" y="0px" viewBox="0 0 100 100" width="26px" xml:space="preserve"><path fill="#999" d="M10,66h16v24l24-24h40V10H10V66z M26,26h48v8H26V26z M26,42h48v8H26V42z"/></svg>
   <!--               Messages -->
             </a>
           </li>
           <li class="utility-bar__list-item">
             <a href="#" class="utility-bar__item-link">
+
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" fill="#999" width="20px" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 0.276083 0.32331250000000004" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd"><defs>
   </defs><g><path class="fil0" d="M0.185915 0.247296c-0.00283406,0.024408 -0.0235765,0.0433539 -0.0487436,0.0433539 -0.0251671,0 -0.0459057,-0.0189459 -0.0487436,-0.0433539l0.0974872 0zm-0.11863 -0.198392c0.015799,-0.0138347 0.0311442,-0.0218257 0.0461308,-0.0250946 6.4844e-005,-0.0131595 0.0107527,-0.0238092 0.0239312,-0.0238092 0.0130794,0 0.0237062,0.0104933 0.0239236,0.0235193 0.0154252,0.00307055 0.0312395,0.0111227 0.047523,0.0253845 0.0264907,0.0291493 0.0340927,0.0621854 0.0291378,0.0978076 -0.00316973,0.076226 0.0178474,0.055453 0.0381511,0.0874021 -0.0460163,0 -0.0920289,0 -0.138041,0 -0.0460163,0 -0.0920289,0 -0.138041,0 0.0203038,-0.031949 0.0413171,-0.0111761 0.0381511,-0.0874021 -0.00495866,-0.0356222 0.00264335,-0.0686583 0.029134,-0.0978076z"/></g></svg>
   <!--               Alerts -->
@@ -26,37 +28,67 @@
       </div>
     </nav>
     <div class="content">
-      <form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
-        <h1>Add Tradesman</h1>
-        <label for="fname">First Name</label>
-        <input placeholder="First name" formControlName="firstName" required type="text" id="fname" name="fname">
-
-        <label for="lname">Last Name</label>
-        <input placeholder="First name" formControlName="firstName" required type="text" id="lname" name="lname">
-
-        <label for="email">Email</label>
-        <input placeholder="Email" formControlName="email" required type="email" id="email" name="email">
-
-        <label for="password">Password</label>
-        <input placeholder="Password" formControlName="password" required type="password" id="password" name="password">
-
-        <label for="cpassword">Confirm Password</label>
-        <input placeholder="Confirm Password" formControlName="cpassword" required type="password" id="cpassword" name="cpassword">
-
-        <label for="cellnumber">Cell Number</label>
-        <input placeholder="Cell Number" formControlName="cellnumber" required type="number" id="cellnumber" name="cellnumber">
-
-        <label for="skill">Skill</label>
-        <select type="select" formControlName="skill" placeholder="Skill" required>
-          <option *ngFor="let skill of skills" [value]="skill.id">{{skill.name}}></option>
-        </select>
-
-        <label for="parish">Parish</label>
-        <select type="select" formControlName="parish" placeholder="Parish" required>
-          <option  *ngFor="let parish of parishes" [value]="parish.id">{{ parish.name }}></option>
-        </select>
-      </form>
-      <button>Edit</button>
+      <h1>View Tradesman</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, perspiciatis!</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Capital</th>
+            <th>Parish</th>
+            <th>Occupation</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a href="#">Keenan Staffieri</a>
+            </td>
+            <td>group2@example.com</td>
+            <td>Stonyhill</td>
+            <td>St.Andrew</td>
+            <td>Halfway Tree</td>
+            <td>Carpenter</td>
+            <td>
+              <button class="btn"><a [routerLink]="['/admin/edit-tradesman']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">Edit</a></button>
+              <button class="btn btn-delete">Delete</button>
+            </td>
+          </tr>
+          <!-- <tr>
+            <td>
+              <a href="#">Sean Staffieri</a>
+            </td>
+            <td>sean@example.com</td>
+            <td>555 XYZ Ave.</td>
+            <td>Los Angeles</td>
+            <td>CA</td>
+            <td>55555</td>
+            <td>
+              <button class="btn">Edit</button>
+              <button class="btn btn-delete">Delete</button>
+            </td>
+          </tr> -->
+          <!-- <tr>
+            <td>
+              <a href="#">Ziggy Staffieri</a>
+            </td>
+            <td>ziggy@example.com</td>
+            <td>555 Yoyo Ave.</td>
+            <td>Austin</td>
+            <td>TX</td>
+            <td>55555</td>
+            <td>
+              <button class="btn">Edit</button>
+              <button class="btn btn-delete">Delete</button>
+            </td>
+          </tr> -->
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

@@ -24,6 +24,9 @@ import { ContactComponent } from './public/pages/contact/contact.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminNavComponent } from './admin/admin-nav/admin-nav.component';
 import { AddTradesmanComponent } from './admin/add-tradesman/add-tradesman.component';
+import { ViewClientComponent } from './admin/view-client/view-client.component';
+import { EditTradesmanComponent } from './admin/edit-tradesman/edit-tradesman.component';
+import { ViewTradesmanComponent } from './admin/view-tradesman/view-tradesman.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { AddTradesmanComponent } from './admin/add-tradesman/add-tradesman.compo
     AdminHomeComponent,
     AdminNavComponent,
     AddTradesmanComponent,
+    ViewClientComponent,
+    EditTradesmanComponent,
+    ViewTradesmanComponent,
 
   ],
   imports: [
