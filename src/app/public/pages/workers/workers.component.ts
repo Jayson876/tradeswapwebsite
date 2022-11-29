@@ -6,7 +6,10 @@ import {
   ViewChild,
 } from '@angular/core';
 import { categories } from 'src/app/worker-categories';
-
+import { SkillsService } from '../../service/skills.service';
+import { Skills } from '../../models/skills';
+import { ParishService } from '../../service/parish.service';
+import { Parish } from '../../models/parish';
 @Component({
   selector: 'app-workers',
   templateUrl: './workers.component.html',
@@ -16,10 +19,12 @@ export class WorkersComponent implements OnInit, AfterViewInit {
   categories = categories;
   currentPage = 0;
   pageLimit = 8;
+  skills!: Skills[];
+  parishes!: Parish[];
 
   @ViewChild('ele1') ele1!: ElementRef;
   @ViewChild('tabbox') tabbox!: HTMLDivElement;
-  constructor() {}
+  constructor(private skillService: SkillsService, private parishService:ParishService) {}
 
   changePage(event: any) {
     this.currentPage = event.pageIndex;
@@ -1349,7 +1354,22 @@ export class WorkersComponent implements OnInit, AfterViewInit {
     },
    ];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getSkills();
+    this.getParishes();
+  }
+
+  getParishes(){
+    this.parishService.getAllParish().subscribe((allParishes:any) =>{
+      this.parishes = allParishes.data;
+    })
+  }
+
+  getSkills(){
+    this.skillService.getAllSkills().subscribe((allSkills:any) =>{
+      this.skills = allSkills.data;
+    })
+  }
 
   ngAfterViewInit(): void {}
 }
