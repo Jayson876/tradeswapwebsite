@@ -26,37 +26,47 @@
       </div>
     </nav>
     <div class="content">
-      <form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
+      <form [formGroup]="form" #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
         <h1>Add Tradesman</h1>
         <label for="fname">First Name</label>
-        <input placeholder="First name" formControlName="firstName" required type="text" id="fname" name="fname">
+        <input placeholder="First name" formGroupName="firstName" required type="text" id="firstname" name="firstname">
+          <!-- <div *ngIf="f.submitted && firstname.errors" class="invalid-feedback">
+            <div *ngIf="firstname.errors['required']">Username is required</div>
+            <div *ngIf="firstname.errors['minlength']">
+              Username must be at least 6 characters
+            </div>
+            <div *ngIf="firstname.errors['maxlength']">
+              Username must be at most 20 characters
+            </div>
+          </div> -->
 
         <label for="lname">Last Name</label>
-        <input placeholder="First name" formControlName="firstName" required type="text" id="lname" name="lname">
+        <input placeholder="Last name" formGroupName="lastName" required type="text" id="lastname" name="lastname">
 
         <label for="email">Email</label>
-        <input placeholder="Email" formControlName="email" required type="email" id="email" name="email">
+        <input placeholder="Email" formGroupName="email" required type="email" id="email" name="email">
 
         <label for="password">Password</label>
-        <input placeholder="Password" formControlName="password" required type="password" id="password" name="password">
+        <input placeholder="Password" formGroupName="password" required type="password" id="password" name="password">
 
         <label for="cpassword">Confirm Password</label>
-        <input placeholder="Confirm Password" formControlName="cpassword" required type="password" id="cpassword" name="cpassword">
+        <input placeholder="Confirm Password" formGroupName="cpassword" required type="password" id="cpassword" name="cpassword">
 
         <label for="cellnumber">Cell Number</label>
-        <input placeholder="Cell Number" formControlName="cellnumber" required type="number" id="cellnumber" name="cellnumber">
+        <input placeholder="Cell Number" formGroupName="cellnumber" required type="number" id="cellnumber" name="cellnumber">
 
         <label for="skill">Skill</label>
-        <select type="select" formControlName="skill" placeholder="Skill" required>
+        <select type="select" formGroupName="skill" placeholder="Skill" required>
           <option *ngFor="let skill of skills" [value]="skill.id">{{skill.name}}></option>
         </select>
 
         <label for="parish">Parish</label>
-        <select type="select" formControlName="parish" placeholder="Parish" required>
+        <select type="select" formGroupName="parish" placeholder="Parish" required>
           <option  *ngFor="let parish of parishes" [value]="parish.id">{{ parish.name }}></option>
         </select>
+
+        <button>Edit</button>
       </form>
-      <button>Edit</button>
     </div>
   </div>
 </div>
