@@ -27,6 +27,7 @@ import { AddTradesmanComponent } from './admin/add-tradesman/add-tradesman.compo
 import { ViewClientComponent } from './admin/view-client/view-client.component';
 import { EditTradesmanComponent } from './admin/edit-tradesman/edit-tradesman.component';
 import { ViewTradesmanComponent } from './admin/view-tradesman/view-tradesman.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -59,9 +60,9 @@ import { ViewTradesmanComponent } from './admin/view-tradesman/view-tradesman.co
     MatPaginatorModule,
     FormsModule,
     ReactiveFormsModule,
-
     MaterialsModule,
     BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

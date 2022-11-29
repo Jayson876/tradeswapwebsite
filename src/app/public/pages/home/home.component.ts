@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ParishService } from '../../service/parish.service';
+import { Parish } from '../../models/parish';
+import { SkillsService } from '../../service/skills.service';
+import { Skills } from '../../models/skills';
 
 @Component({
   selector: 'app-home',
@@ -417,7 +421,26 @@ export class HomeComponent implements OnInit {
     },
 
   ];
-  constructor() {}
+  parishes!: Parish[];
+  skills!: Skills[];
 
-  ngOnInit(): void {}
+  constructor(private parishService: ParishService, private skillService: SkillsService) {}
+
+  ngOnInit(): void {
+    this.getParishes();
+    this.getSkills();
+  }
+
+  getParishes(){
+    this.parishService.getAllParish().subscribe((allParishes:any) =>{
+      this.parishes = allParishes.data;
+    })
+  }
+
+  getSkills(){
+    this.skillService.getAllSkills().subscribe((allSkills:any) =>{
+      this.skills = allSkills.data;
+    })
+  }
+
 }
