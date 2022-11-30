@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import { ParishService } from 'src/app/public/service/parish.service';
+import { SkillsService } from 'src/app/public/service/skills.service';
+import { Parish } from 'src/app/public/models/parish';
+import { Skills } from 'src/app/public/models/skills';
 
 @Component({
   selector: 'app-tradesman-registration',
@@ -8,6 +12,11 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class TradesmanRegistrationComponent {
 // not requiring files for form completion for now
+
+parishes!: Parish[];
+skills!: Skills[];
+
+
   firstFormGroup = this._formBuilder.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -61,19 +70,19 @@ export class TradesmanRegistrationComponent {
   
   // dummy value for parish and skill
   // pull from db
-  parishes =[
-    {id:1,name:"Kingston"},
-    {id:2,name:"Clarendon"},
-    {id:3,name:"St. Catherine"},
-    {id:4,name:"St. Mary"},
-    {id:5,name:"St. Elisabeth"},
-    {id:6,name:"Westmoreland"},
-  ]
-  skills =[
-    {id:1,name:"Plumming"},
-    {id:2,name:"Masonry"},
-    {id:3,name:"Electrical"},
-  ]
+  // parishes =[
+  //   {id:1,name:"Kingston"},
+  //   {id:2,name:"Clarendon"},
+  //   {id:3,name:"St. Catherine"},
+  //   {id:4,name:"St. Mary"},
+  //   {id:5,name:"St. Elisabeth"},
+  //   {id:6,name:"Westmoreland"},
+  // ]
+  // skills =[
+  //   {id:1,name:"Plumming"},
+  //   {id:2,name:"Masonry"},
+  //   {id:3,name:"Electrical"},
+  // ]
   // this would be the file....
   srcResult: any;
   // files are going to be hard to work with
@@ -93,9 +102,25 @@ export class TradesmanRegistrationComponent {
     }
   }
 
+  getParishes(){
+    this.parishService.getAllParish().subscribe((allParishes:any) =>{
+      this.parishes = allParishes.data;
+    })
+  }
+
+  getSkills(){
+    this.skillService.getAllSkills().subscribe((allSkills:any) =>{
+      this.skills = allSkills.data;
+    })
+  }
+
+  ngOnInit(): void {
+    this.getParishes();
+    this.getSkills();
+  }
 
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder,private parishService: ParishService, private skillService: SkillsService) {}
 // you can use this function when they complete the form
   onSubmitForm(){
     // too lazy to do confirm password logic
