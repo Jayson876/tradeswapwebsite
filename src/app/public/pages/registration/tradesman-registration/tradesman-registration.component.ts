@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-tradesman-registration',
@@ -27,12 +28,12 @@ export class TradesmanRegistrationComponent {
   fourthFormGroup = this._formBuilder.group({
     parish: ['', Validators.required],
   });
-  
+
   fifthFormGroup = this._formBuilder.group({
     idUpload: ['', Validators.required],
     selfieUpload: ['', Validators.required],
   });
-  
+
   get firstName() {
     return this.firstFormGroup.get('firstName')?.value;
   }
@@ -55,10 +56,10 @@ export class TradesmanRegistrationComponent {
   get parish() {
     return this.secondFormGroup.get('parish')?.value;
   }
-  
+
   // set this to false if you want to go through the stepper freely
   isLinear = true;
-  
+
   // dummy value for parish and skill
   // pull from db
   parishes =[
@@ -81,21 +82,21 @@ export class TradesmanRegistrationComponent {
   // https://stackoverflow.com/questions/52622061/how-to-use-input-type-file-in-angular-material
   onFileSelected() {
     const inputNode: any = document.querySelector('#file');
-    
+
     if (typeof (FileReader) !== 'undefined') {
       const reader = new FileReader();
-  
+
       reader.onload = (e: any) => {
         this.srcResult = e.target.result;
       };
-  
+
       reader.readAsArrayBuffer(inputNode.files[0]);
     }
   }
 
 
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private location: Location) {}
 // you can use this function when they complete the form
   onSubmitForm(){
     // too lazy to do confirm password logic
@@ -113,5 +114,7 @@ export class TradesmanRegistrationComponent {
     // TODO. navigate user when post is completed
   }
 
-
+  back() {
+    this.location.back();
+  }
 }

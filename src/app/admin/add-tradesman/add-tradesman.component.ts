@@ -8,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class AddTradesmanComponent implements OnInit {
 
   constructor() { }
-
+onSubmit(){
+console.log('Great')
+}
+parishes: any[] = [
+{name: 'David'},
+];
+skills: any[] = [
+{name: 'David'},
+];
   ngOnInit(): void {
   }
 

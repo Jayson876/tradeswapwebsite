@@ -1,6 +1,21 @@
 <app-header></app-header>
 <main>
   <div class="container">
+      <div class="navigate-to-last">
+        <button (click)="back()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#000000"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+          </svg>
+          Back
+        </button>
+      </div>
     <section class="registration-form-section">
       <div class="form-title">Client Registration</div>
       <mat-stepper orientation="horizontal" [linear]="isLinear" #stepper>
@@ -103,7 +118,13 @@
               Thank you for registering. Login in to get started!
             </p>
             <!-- this is where you go when everything is completed. can make a navigation instead -->
-            <button [routerLink]="['/signin']" mat-raised-button (click)="stepper.reset()">Login</button>
+            <button
+              [routerLink]="['/signin']"
+              mat-raised-button
+              (click)="stepper.reset()"
+            >
+              Login
+            </button>
           </div>
         </mat-step>
       </mat-stepper>

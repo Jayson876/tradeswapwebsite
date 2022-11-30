@@ -1,5 +1,35 @@
 @import "../../../../../assets/util/colors.scss";
 
+.navigate-to-last {
+  width: 100%;
+  padding: 48px 0 24px;
+
+  button {
+    border: 0;
+    background: none;
+    padding: 0;
+    color: $primaryblue;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+
+    svg {
+      transition: all 0.2s ease-in-out;
+      fill: $primaryblue;
+    }
+    &:hover {
+      color: $primarybluedark;
+      text-decoration: underline;
+
+      svg {
+        fill: $primarybluedark;
+      }
+    }
+  }
+}
+
+
 .form-title {
   font-size: 1.563rem;
   line-height: 125%;
@@ -36,7 +66,6 @@
 }
 .registration-form-section {
   padding: 48px 24px;
-  margin: 48px 0;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;

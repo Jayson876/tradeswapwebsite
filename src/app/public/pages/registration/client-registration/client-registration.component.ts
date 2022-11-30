@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 
@@ -8,7 +9,7 @@ import {FormBuilder, Validators} from '@angular/forms';
   styleUrls: ['./client-registration.component.scss']
 })
 export class ClientRegistrationComponent  {
-  
+
   firstFormGroup = this._formBuilder.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -59,7 +60,7 @@ export class ClientRegistrationComponent  {
 
 
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(private _formBuilder: FormBuilder, private location: Location) {}
 // you can use this function when they complete the form
   onSubmitForm(){
     // too lazy to do confirm password logic
@@ -77,4 +78,7 @@ export class ClientRegistrationComponent  {
     // TODO. navigate user when post is completed
   }
 
+  back() {
+    this.location.back();
+  }
 }
