@@ -26,15 +26,15 @@
           <div class="search-input">
             <select name="location" id="location">
               <option disabled selected>Select Your Location</option>
-              <option value="Kingston, Jamaica">Kingston, Jamaica</option>
+              <option *ngFor="let par of parishes" value="{{ par._id }}">{{par.parish_name}}</option>
             </select>
           </div>
           <!-- CATEGORY INPUT -->
           <div class="search-input">
             <select name="location" id="location">
               <option disabled selected>Category</option>
-              <option *ngFor="let cat of categories" value="{{ cat.catName }}">
-                {{ cat.catName }}
+              <option *ngFor="let cat of skills" value="{{ cat._id }}">
+                {{ cat.category_name }}
               </option>
             </select>
           </div>
@@ -397,7 +397,7 @@
           <form action="">
             <select name="location" id="location">
               <option disabled selected>Location</option>
-              <option value="Kingston, Jamaica">Kingston,Jamaica</option>
+              <option *ngFor="let par of parishes" value="{{ par._id }}">{{par.parish_name}}</option>
             </select>
             <button>Apply</button>
           </form>
@@ -422,8 +422,8 @@
       <div class="controls-bottom">
         <div class="category-scroller">
           <div class="category-widgets" appScroll>
-            <span class="category-widget" *ngFor="let cat of categories">{{
-              cat.catName
+            <span class="category-widget" *ngFor="let cat of skills">{{
+              cat.category_name
             }}</span>
           </div>
         </div>
