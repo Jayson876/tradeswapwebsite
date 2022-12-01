@@ -134,13 +134,13 @@
         <a [routerLink]="['/workers']">view more workers</a>
       </header>
       <div class="workers-card-group">
-        <article class="workers-card" *ngFor="let worker of workers | slice: 0:4">
+        <article class="workers-card" *ngFor="let worker of tradesmanOnly | slice: 0:4">
           <div class="location-badge">
-            <span>{{ worker.location }}</span>
+            <span>{{ worker.parishID.parish_name }}</span>
           </div>
-          <img src="{{ worker.image }}" alt="" />
+          <img src="https://th.bing.com/th/id/R.b06fbabef25c4e9e0d14fc1ef8c6798b?rik=QyaT1OC9QVfmkw&pid=ImgRaw&r=0" alt="" />
           <div class="workers-card-title">
-            <div class="worker-name">{{ worker.name }}</div>
+            <div class="worker-name">{{ worker.first_name}}&nbsp; {{worker.last_name}}</div>
             <div class="worker-contact">
               <span
                 ><svg
@@ -191,36 +191,35 @@
                   <g></g>
                   <g></g>
                 </svg>
-                {{ worker.cell | slice: 0:3 }}-{{ worker.cell | slice: 3:6 }}-{{
-                  worker.cell | slice: 6:10
+                {{ worker.phone_number | slice: 0:3 }}-{{ worker.phone_number | slice: 3:6 }}-{{
+                  worker.phone_number | slice: 6:10
                 }}</span
               >
             </div>
           </div>
           <div class="workers-card-subtitle">
             <div class="worker-skill">
-              <span>{{ worker.skill }}</span>
+              <span>{{ worker.categoryID.category_name }}</span>
             </div>
             <div class="worker-rate">
-              {{ worker.rate | currency
-              }}<span class="worker-rate-type"
-                >/{{ worker.rateType
+              {{ worker.work_rate | currency}}
+              <!-- <span class="worker-rate-type">/{{ worker.rateType
                 }}<span *ngIf="worker.rateNegotiable">*</span></span
-              >
+              > -->
             </div>
           </div>
           <div class="workers-card-details">
             <div class="worker-rating-section">
               <div class="worker-rating-label">Rating</div>
               <div class="worker-rating-value">
-                <span>{{ worker.rating }} </span
-                ><span class="rating-star">&starf;</span>
+                <mat-icon style="font-size: 18px;color:gold">star star star star star_half</mat-icon>
+                <!-- <span>{{ worker.rating }} </span><span class="rating-star">&starf;</span> -->
               </div>
             </div>
-            <div class="worker-review-section">
+            <!-- <div class="worker-review-section">
               <div class="worker-review-label">Reviews</div>
               <div class="worker-review-value">{{ worker.reviews }}</div>
-            </div>
+            </div> -->
             <div class="view-worker-profile-button-section">
               <a href="" class="view-worker-profile-button">View More</a>
             </div>
