@@ -28,6 +28,7 @@ import { ViewClientComponent } from './admin/view-client/view-client.component';
 import { EditTradesmanComponent } from './admin/edit-tradesman/edit-tradesman.component';
 import { ViewTradesmanComponent } from './admin/view-tradesman/view-tradesman.component';
 import { HttpClientModule } from '@angular/common/http';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MaterialsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],

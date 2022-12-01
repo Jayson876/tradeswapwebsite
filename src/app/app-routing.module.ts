@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'workers', component: WorkersComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'contact2', component: ContactusComponent },
-  { path: ':id/profile', component: TradesmanProfileComponent },
+  { path: 'profile/:id', component: TradesmanProfileComponent },
   { path: 'registration-client', component: ClientRegistrationComponent },
   { path: 'registration-tradesman', component: TradesmanRegistrationComponent },
   { path: '**', redirectTo: 'home' },

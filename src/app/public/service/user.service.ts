@@ -31,9 +31,14 @@ export class UserService {
   updateUser(id: number, user: User): Observable<User> {
     return this.http.patch<User>(`${this.REST_API_URL}/${id}`, user);
   }
-  getUserById(id: number): Observable<User> {
-    return this.http.get<User>(`${this.REST_API_URL}/${id}`);
+
+  getUserByID(id: string):Observable<User | any>{
+    return this.http.get<User>(`${this.REST_API_URL}/${id}`).pipe(
+      tap(selectedWorker => console.log(`User Retrieved By Id`)),
+      catchError(error => of(new User())),
+    );
   }
+  
   deleteUser(id: number): Observable<User> {
     return this.http.delete<User>(`${this.REST_API_URL}/${id}`);
   }
