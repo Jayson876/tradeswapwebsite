@@ -1,8 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-
-
+import { Parish } from 'src/app/public/models/parish';
+import { ParishService } from 'src/app/public/service/parish.service';
+import { UserService } from 'src/app/public/service/user.service';
 @Component({
   selector: 'app-client-registration',
   templateUrl: './client-registration.component.html',
@@ -10,23 +11,25 @@ import {FormBuilder, Validators} from '@angular/forms';
 })
 export class ClientRegistrationComponent  {
 
+  parishes!: Parish[];
+
   firstFormGroup = this._formBuilder.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    first_name: ['', Validators.required],
+    last_name: ['', Validators.required],
     email: ['', Validators.required],
     password: ['', Validators.required],
     confirmPassword: ['', Validators.required],
-    cellNumber: ['', Validators.required],
+    phone_number: ['', Validators.required],
   });
   secondFormGroup = this._formBuilder.group({
-    parish: ['', Validators.required],
+    parishID: ['', Validators.required],
   });
 
-  get firstName() {
-    return this.firstFormGroup.get('firstName')?.value;
+  get first_name() {
+    return this.firstFormGroup.get('first_name')?.value;
   }
-  get lastName() {
-    return this.firstFormGroup.get('lastName')?.value;
+  get last_name() {
+    return this.firstFormGroup.get('last_name')?.value;
   }
   get email() {
     return this.firstFormGroup.get('email')?.value;
@@ -37,45 +40,50 @@ export class ClientRegistrationComponent  {
   get confirmPassword() {
     return this.firstFormGroup.get('confirmPassword')?.value;
   }
-  get cellNumber() {
-    return this.firstFormGroup.get('cellNumber')?.value;
+  get phone_number() {
+    return this.firstFormGroup.get('phone_number')?.value;
   }
-  get parish() {
-    return this.secondFormGroup.get('parish')?.value;
+  get parishID() {
+    return this.secondFormGroup.get('parishID')?.value;
   }
 
+  getParishes(){
+    this.parishService.getAllParish().subscribe((allParishes:any) =>{
+      this.parishes = allParishes.data;
+    })
+  }
+
+  ngOnInit(): void {
+    this.getParishes();
+  }
 
   isLinear = true;
 
   // dummy value for parish
   // pull from db
-  parishes =[
-    {id:1,name:"Kingston"},
-    {id:2,name:"Clarendon"},
-    {id:3,name:"St. Catherine"},
-    {id:4,name:"St. Mary"},
-    {id:5,name:"St. Elisabeth"},
-    {id:6,name:"Westmoreland"},
-  ]
+  // parishes =[
+  //   {id:1,name:"Kingston"},
+  //   {id:2,name:"Clarendon"},
+  //   {id:3,name:"St. Catherine"},
+  //   {id:4,name:"St. Mary"},
+  //   {id:5,name:"St. Elisabeth"},
+  //   {id:6,name:"Westmoreland"},
+  // ]
 
 
 
-  constructor(private _formBuilder: FormBuilder, private location: Location) {}
-// you can use this function when they complete the form
-  onSubmitForm(){
-    // too lazy to do confirm password logic
-
-    // all user data collected
-    const formData ={
-      firstName:this.firstName,
-      lastName:this.lastName,
-      email:this.email,
-      password:this.password,
-      cellNumber:this.cellNumber,
-      parishId:this.parish
-    }
-    // TODO. implement logic to post this to backend
-    // TODO. navigate user when post is completed
+  constructor(private _formBuilder: FormBuilder, private location: Location, private parishService: ParishService,
+    private clientService: UserService) {}
+   
+  onSubmitForm(data: Object){
+      this.clientService.addUser(data).subscribe({
+      next:(res)=>{
+        alert('Client Added')
+      },
+      error:(error)=>{
+        console.log(error);        
+      }
+    })
   }
 
   back() {
