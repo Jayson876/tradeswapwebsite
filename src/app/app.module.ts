@@ -28,6 +28,7 @@ import { ViewClientComponent } from './admin/view-client/view-client.component';
 import { EditTradesmanComponent } from './admin/edit-tradesman/edit-tradesman.component';
 import { ViewTradesmanComponent } from './admin/view-tradesman/view-tradesman.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditProfileComponent } from './public/pages/tradesman-profile/components/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { HttpClientModule } from '@angular/common/http';
     ViewClientComponent,
     EditTradesmanComponent,
     ViewTradesmanComponent,
+    EditProfileComponent,
 
   ],
   imports: [

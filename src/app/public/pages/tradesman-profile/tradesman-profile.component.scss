@@ -40,6 +40,37 @@ main {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: rgb(17 17 26 / 10%) 0px 1px 0px;
+  display: flex;
+  flex-direction: column;
+
+  .edit-btn {
+    align-self: flex-end;
+
+    button {
+      border: 0;
+      border-radius: 4px;
+      background: 0;
+      display: flex;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: $textblack;
+      cursor: pointer;
+
+      svg {
+        margin-right: 4px;
+        fill: $textblack;
+      }
+
+      &:hover {
+        color: $primaryblue;
+
+        svg {
+          fill: $primaryblue;
+        }
+      }
+    }
+  }
 
   .profile-card {
     width: 100%;
