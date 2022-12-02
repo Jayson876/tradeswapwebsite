@@ -64,7 +64,8 @@ import { EditProfileComponent } from './public/pages/tradesman-profile/component
     ReactiveFormsModule,
     MaterialsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent],

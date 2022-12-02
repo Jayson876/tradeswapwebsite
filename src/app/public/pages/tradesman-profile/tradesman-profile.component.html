@@ -33,9 +33,9 @@ Edit Profile
               srcset=""
             />
           </div>
-          <div class="profile-information">
+          <div class="profile-information" *ngFor="let worker of selectedTradesman">
             <div class="flex space-between align-center">
-              <div class="profile-name">Sam Baker</div>
+              <div class="profile-name">{{worker.first_name}}&nbsp;{{worker.last_name}}</div>
               <div class="profile-contact flex align-center">
                 <span class="flex align-center"
                   ><svg
@@ -86,12 +86,13 @@ Edit Profile
                     <g></g>
                     <g></g>
                   </svg>
-                  876-581-3979
+                  {{ worker.phone_number | slice: 0:3 }}-{{ worker.phone_number | slice: 3:6 }}-{{
+                    worker.phone_number | slice: 6:10}}
                 </span>
               </div>
             </div>
             <div class="profile-rate">
-              $1000.00
+              {{worker.work_rate | currency}}
               <span class="profile-rate-type"
                 >/Job<span class="neg-icon">*</span></span
               >
@@ -111,7 +112,7 @@ Edit Profile
                     d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
                   />
                 </svg>
-                Carpenter
+                {{worker.categoryID.category_name}}
               </div>
             </div>
             <div class="profile-location flex align-center">
@@ -127,7 +128,7 @@ Edit Profile
                   d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
                 />
               </svg>
-              Kingston
+              {{worker.parishID.parish_name}}
             </div>
           </div>
         </div>
