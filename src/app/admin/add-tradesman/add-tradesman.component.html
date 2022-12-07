@@ -26,46 +26,162 @@
       </div>
     </nav>
     <div class="content">
-      <form [formGroup]="form" #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
+      <!-- <form [formGroup]="TradesmanForm" (ngSubmit)="onSubmit()">
         <h1>Add Tradesman</h1>
         <label for="fname">First Name</label>
-        <input placeholder="First name" formGroupName="firstName" required type="text" id="firstname" name="firstname">
-          <!-- <div *ngIf="f.submitted && firstname.errors" class="invalid-feedback">
-            <div *ngIf="firstname.errors['required']">Username is required</div>
-            <div *ngIf="firstname.errors['minlength']">
-              Username must be at least 6 characters
-            </div>
-            <div *ngIf="firstname.errors['maxlength']">
-              Username must be at most 20 characters
-            </div>
-          </div> -->
+        <input placeholder="First name" formGroupName="firstName" required type="text" id="firstname" name="firstname" ngModel>
 
         <label for="lname">Last Name</label>
-        <input placeholder="Last name" formGroupName="lastName" required type="text" id="lastname" name="lastname">
+        <input placeholder="Last name" formGroupName="lastName" required type="text" id="lastname" name="lastname" ngModel>
 
         <label for="email">Email</label>
-        <input placeholder="Email" formGroupName="email" required type="email" id="email" name="email">
+        <input placeholder="Email" formGroupName="email" required type="email" id="email" name="email" ngModel>
 
         <label for="password">Password</label>
-        <input placeholder="Password" formGroupName="password" required type="password" id="password" name="password">
+        <input placeholder="Password" formGroupName="password" required type="password" id="password" name="password" ngModel>
 
         <label for="cpassword">Confirm Password</label>
-        <input placeholder="Confirm Password" formGroupName="cpassword" required type="password" id="cpassword" name="cpassword">
+        <input placeholder="Confirm Password" formGroupName="cpassword" required type="password" id="cpassword" name="cpassword" ngModel>
 
         <label for="cellnumber">Cell Number</label>
-        <input placeholder="Cell Number" formGroupName="cellnumber" required type="number" id="cellnumber" name="cellnumber">
+        <input placeholder="Cell Number" formGroupName="cellnumber" required type="number" id="cellnumber" name="cellnumber" ngModel>
 
         <label for="skill">Skill</label>
-        <select type="select" formGroupName="skill" placeholder="Skill" required>
+        <select type="select" formGroupName="skill" placeholder="Skill" ngModel required>
+          <option>Select...</option>
           <option *ngFor="let skill of skills" [value]="skill.id">{{skill.name}}></option>
         </select>
 
         <label for="parish">Parish</label>
-        <select type="select" formGroupName="parish" placeholder="Parish" required>
+        <select type="select" formGroupName="parish" placeholder="Parish" ngModel required>
+          <option>Select...</option>
           <option  *ngFor="let parish of parishes" [value]="parish.id">{{ parish.name }}></option>
         </select>
 
-        <button>Edit</button>
+        <button type="submit">Edit</button>
+      </form> -->
+      <form [formGroup]="TradesmanForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label for="inputfName">First Name</label>
+          <input class="form-control" type="text" formControlName="firstname" />
+          <!-- error -->
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['firstname'].errors?.['required']"
+          >
+            First Name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputlName">Last Name</label>
+          <input class="form-control" type="text" formControlName="lastname" />
+          <!-- error -->
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['lastname'].errors?.['required']"
+          >
+            Last Name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputEmail3">Email</label>
+          <input class="form-control" type="text" formControlName="email" />
+          <!-- error -->
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['email'].errors?.['required']"
+          >
+            Enter your email.
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['email'].errors?.['pattern']"
+          >
+            Enter valid email.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">Password</label>
+          <input class="form-control" type="password" formControlName="password" />
+          <!-- error -->
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['password'].errors?.['required']"
+          >
+            Password is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputVerify3">Mobile Number</label>
+          <input
+            class="form-control"
+            type="text"
+            formControlName="phoneNumber"
+          />
+          <!-- error -->
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['phoneNumber'].errors?.['required']"
+          >
+            Enter your phone number.
+          </div>
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['phoneNumber'].errors?.['pattern']"
+          >
+            Enter Numbers Only
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3">Skill</label>
+          <select
+            class="custom-select form-control"
+            formControlName="skill"
+          >
+            <option value="">Choose...</option>
+            <option *ngFor="let cat of skills" value="{{ cat._id }}">
+              {{ cat.category_name }}
+            </option>
+          </select>
+          <!-- error -->
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['skill'].errors?.['required']"
+          >
+            Choose a Skill.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputPassword3">Parish</label>
+          <select
+            class="custom-select form-control"
+            formControlName="parish"
+          >
+            <option value="">Choose...</option>
+            <option *ngFor="let par of parishes" value="{{ par._id }}">{{par.parish_name}}</option>
+          </select>
+          <!-- error -->
+          <div
+            class="invalid-feedback"
+            *ngIf="submitted && myForm['parish'].errors?.['required']"
+          >
+            Choose a Parish.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit">
+            Register
+          </button>
+        </div>
+
       </form>
     </div>
   </div>

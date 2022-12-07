@@ -1,87 +1,92 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { UserService } from 'src/app/public/service/user.service';
+import { ParishService } from 'src/app/public/service/parish.service';
+import { SkillsService } from 'src/app/public/service/skills.service';
+import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-tradesman',
   templateUrl: './add-tradesman.component.html',
   styleUrls: ['./add-tradesman.component.scss']
 })
-export class AddTradesmanComponent {
+export class AddTradesmanComponent implements OnInit {
+  submitted = false;
+  TradesmanForm!: FormGroup;
+  parishes: any;
+  skills: any;
 
-  constructor(private _formBuilder: FormBuilder) {}
-// you can use this function when they complete the form
-  onSubmitForm(){
-    // too lazy to do confirm password logic
-
-    // all user data collected
-    const formData ={
-      firstName:this.firstName,
-      lastName:this.lastName,
-      email:this.email,
-      password:this.password,
-      cellNumber:this.cellNumber,
-      parishId:this.parish
+  constructor(
+    public fb: FormBuilder,
+    private router: Router,
+    private ngZone: NgZone,
+    private userService: UserService,
+    private parishService: ParishService,
+    private skillService: SkillsService ) {
+      this.mainForm();
     }
-    // TODO. implement logic to post this to backend
-    // TODO. navigate user when post is completed
 
-  }
-  form = this._formBuilder.group({
-    firstname: ['', Validators.required],
-    lastname: ['', Validators.required],
-    email: ['', Validators.required],
-    password: ['', Validators.required],
-    cPassword: ['', Validators.required],
-    cellNumber: ['', Validators.required],
-    skill: ['', Validators.required],
-    parish: ['', Validators.required],
-  });
-
-  get firstName() {
-    return this.form.get('firstName')?.value;
-  }
-  get lastName() {
-    return this.form.get('lastName')?.value;
-  }
-  get email() {
-    return this.form.get('email')?.value;
-  }
-  get password() {
-    return this.form.get('password')?.value;
-  }
-  get confirmPassword() {
-    return this.form.get('cPassword')?.value;
-  }
-  get cellNumber() {
-    return this.form.get('cellNumber')?.value;
-  }
-  // seperator
-  get parish() {
-    return this.form.get('parish')?.value;
+  mainForm() {
+    this.TradesmanForm = this.fb.group({
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$'),
+        ],
+      ],
+      phoneNumber: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      password: ['', [Validators.required,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$'),]],
+      skill: ['', [Validators.required]],
+      parish: ['', [Validators.required]],
+    });
   }
 
-  // dummy value for parish and skill
-  // pull from db
-  parishes =[
-    {id:1,name:"Kingston"},
-    {id:2,name:"Clarendon"},
-    {id:3,name:"St. Catherine"},
-    {id:4,name:"St. Mary"},
-    {id:5,name:"St. Elisabeth"},
-    {id:6,name:"Westmoreland"},
-  ]
-  skills =[
-    {id:1,name:"Plumming"},
-    {id:2,name:"Masonry"},
-    {id:3,name:"Electrical"},
-  ]
+  // updateProfile(e: any) {
+  //   this.TradesmanForm.get('skill').setValue(e, {
+  //     onlySelf: true,
+  //   });
+  // }
 
-  onSubmit(): void {
-
+  get myForm() {
+    return this.TradesmanForm.controls;
   }
 
+  onSubmit() {
+    this.submitted = true;
+
+    if (!this.TradesmanForm.valid) {
+      return false;
+    } else {
+      return this.userService.addUser(this.TradesmanForm.value).subscribe({
+        complete: ()=> {
+          console.log("Employee has been created successfully"),
+          this.ngZone.run(()=> this.router.navigateByUrl('/admin/home'));
+        },
+        error: (e) => {
+          console.log(e);
+        }
+      })
+    }
+  }
 
   ngOnInit(): void {
+    this.getSkills();
+    this.getParishes();
+  }
 
-}
+  getParishes(){
+    this.parishService.getAllParish().subscribe((allParishes:any) =>{
+      this.parishes = allParishes.data;
+    })
+  }
+
+  getSkills(){
+    this.skillService.getAllSkills().subscribe((allSkills:any) =>{
+      this.skills = allSkills.data;
+    })
+  }
+
 }
