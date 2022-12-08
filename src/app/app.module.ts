@@ -29,6 +29,8 @@ import { EditTradesmanComponent } from './admin/edit-tradesman/edit-tradesman.co
 import { ViewTradesmanComponent } from './admin/view-tradesman/view-tradesman.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditProfileComponent } from './public/pages/tradesman-profile/components/edit-profile/edit-profile.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -37,9 +39,7 @@ import { EditProfileComponent } from './public/pages/tradesman-profile/component
     ContactusComponent,
     HeaderComponent,
     WorkersListComponent,
-
     SignInComponent,
-
     ClientRegistrationComponent,
     TradesmanRegistrationComponent,
     FooterComponent,
@@ -54,7 +54,6 @@ import { EditProfileComponent } from './public/pages/tradesman-profile/component
     EditTradesmanComponent,
     ViewTradesmanComponent,
     EditProfileComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -65,7 +64,8 @@ import { EditProfileComponent } from './public/pages/tradesman-profile/component
     MaterialsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

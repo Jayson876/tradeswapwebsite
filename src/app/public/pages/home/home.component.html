@@ -140,7 +140,7 @@
           </div>
           <img src="https://th.bing.com/th/id/R.b06fbabef25c4e9e0d14fc1ef8c6798b?rik=QyaT1OC9QVfmkw&pid=ImgRaw&r=0" alt="" />
           <div class="workers-card-title">
-            <div class="worker-name">{{ worker.first_name}}&nbsp; {{worker.last_name}}</div>
+            <div class="worker-name">{{ worker.first_name}} {{worker.last_name | slice: 0:1}}.</div>
             <div class="worker-contact">
               <span
                 ><svg
@@ -221,7 +221,7 @@
               <div class="worker-review-value">{{ worker.reviews }}</div>
             </div> -->
             <div class="view-worker-profile-button-section">
-              <a href="" class="view-worker-profile-button">View More</a>
+              <a (click)="moveToProfilePage(worker._id)" class="view-worker-profile-button">View More</a>
             </div>
           </div>
         </article>

@@ -28,8 +28,8 @@ export class UserService {
     );
   }
 
-  updateUser(id: number, user: User): Observable<User> {
-    return this.http.patch<User>(`${this.REST_API_URL}/${id}`, user);
+  updateUser(id: string, formData: FormData): Observable<User> {
+    return this.http.patch<User>(`${this.REST_API_URL}/${id}`, formData);
   }
 
   getUserByID(id: string):Observable<User | any>{
@@ -38,7 +38,7 @@ export class UserService {
       catchError(error => of(new User())),
     );
   }
-  
+
   deleteUser(id: number): Observable<User> {
     return this.http.delete<User>(`${this.REST_API_URL}/${id}`);
   }

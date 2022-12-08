@@ -19,23 +19,39 @@
 
     <section class="profile-card-section">
       <div class="edit-btn">
-<button>
-<svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 0 24 24" width="18px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
-Edit Profile
-</button>
-</div>
+        <button (click)="onUpdate()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="18px"
+            viewBox="0 0 24 24"
+            width="18px"
+            fill="#000000"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+            />
+          </svg>
+          Edit Profile
+        </button>
+      </div>
       <div class="profile-card">
         <div class="profile-card-left">
           <div class="profile-picture">
             <img
-              src="https://www.axa.co.uk/globalassets/new-website/business/carpenters/carpenter_v2_masthead.jpg?width=1600&mode=crop&heightratio=0.5625&quality=80"
+              src="/assets/images/workers/default.png"
               alt=""
               srcset=""
             />
           </div>
-          <div class="profile-information" *ngFor="let worker of selectedTradesman">
+          <div
+            class="profile-information"
+            *ngFor="let worker of selectedTradesman"
+          >
             <div class="flex space-between align-center">
-              <div class="profile-name">{{worker.first_name}}&nbsp;{{worker.last_name}}</div>
+              <div class="profile-name">
+                {{ worker.first_name }}&nbsp;{{ worker.last_name }}
+              </div>
               <div class="profile-contact flex align-center">
                 <span class="flex align-center"
                   ><svg
@@ -86,16 +102,20 @@ Edit Profile
                     <g></g>
                     <g></g>
                   </svg>
-                  {{ worker.phone_number | slice: 0:3 }}-{{ worker.phone_number | slice: 3:6 }}-{{
-                    worker.phone_number | slice: 6:10}}
+                  {{ worker.phone_number | slice: 0:3 }}-{{
+                    worker.phone_number | slice: 3:6
+                  }}-{{ worker.phone_number | slice: 6:10 }}
                 </span>
               </div>
             </div>
             <div class="profile-rate">
-              {{worker.work_rate | currency}}
-              <span class="profile-rate-type"
+              {{ worker.work_rate | currency }}
+              <!-- <span class="profile-rate-type"
                 >/Job<span class="neg-icon">*</span></span
-              >
+              > -->
+            </div>
+            <div class="worker-email">
+              {{ worker.email }}
             </div>
             <div class="width-100 flex justify-start align-center"></div>
             <div class="width-100 flex space-between align-center">
@@ -112,7 +132,7 @@ Edit Profile
                     d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"
                   />
                 </svg>
-                {{worker.categoryID.category_name}}
+                {{ worker.categoryID.category_name }}
               </div>
             </div>
             <div class="profile-location flex align-center">
@@ -128,7 +148,7 @@ Edit Profile
                   d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
                 />
               </svg>
-              {{worker.parishID.parish_name}}
+              {{ worker.parishID.parish_name }}
             </div>
           </div>
         </div>

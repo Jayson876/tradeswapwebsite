@@ -5,6 +5,7 @@ import { SkillsService } from '../../service/skills.service';
 import { Skills } from '../../models/skills';
 import { UserService } from '../../service/user.service';
 import { User } from '../../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -429,7 +430,7 @@ export class HomeComponent implements OnInit {
   tradesmanOnly:any[] = [];
 
   constructor(private parishService: ParishService, private skillService: SkillsService,
-              private tradesmanService:UserService) {}
+              private tradesmanService:UserService, private route: Router) {}
 
   ngOnInit(): void {
     this.getParishes();
@@ -460,4 +461,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  moveToProfilePage(id:any){
+    this.route.navigate(['profile/' + id]);
+  }
 }

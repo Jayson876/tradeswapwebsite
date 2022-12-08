@@ -388,7 +388,6 @@
           <div class="sort-controls">
             <div class="sort-label">Sort By:</div>
             <div class="sort-categories">
-              <button class="sort-category active">All</button>
               <button class="sort-category">Most Popular</button>
               <button class="sort-category">Price: Highest To Lowest</button>
               <button class="sort-category">Price: Lowest To Highest</button>
@@ -445,7 +444,7 @@
           </div>
           <img src="https://th.bing.com/th/id/R.b06fbabef25c4e9e0d14fc1ef8c6798b?rik=QyaT1OC9QVfmkw&pid=ImgRaw&r=0" alt="" />
           <div class="workers-card-title">
-            <div class="worker-name">{{ worker.first_name }} &nbsp; {{worker.last_name}}</div>
+            <div class="worker-name">{{ worker.first_name }} {{worker.last_name | slice: 0:1}}.</div>
             <div class="worker-contact">
               <span
                 ><svg

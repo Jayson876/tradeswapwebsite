@@ -1,3 +1,4 @@
+import { EditProfileService } from './../../service/edit-profile.service';
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -16,14 +17,14 @@ export class TradesmanProfileComponent implements OnInit {
   tradesman!:User[];
   selectedTradesman:any[] = [];
 
-  constructor(private location: Location, private activateRoute:ActivatedRoute, private tradesmanService:UserService) {}
+  constructor(private location: Location, private activateRoute:ActivatedRoute, private tradesmanService:UserService, private editProfileService: EditProfileService) {}
 
   getTradesmanById(){
     this.tradesmanService.getUserByID(this.selectedId).subscribe((worker:any) => {
       this.tradesman = worker.data;
       this.selectedTradesman.push(worker.data);
       console.log(this.selectedTradesman);
-    }) 
+    })
   }
 
   ngOnInit(): void {
@@ -32,5 +33,16 @@ export class TradesmanProfileComponent implements OnInit {
 
   back() {
     this.location.back();
+  }
+
+  onUpdate() {
+    this.editProfileService
+      .openConfirmDialog(this.selectedId)
+      .afterClosed()
+      .subscribe((data: any) => {
+        if (data) {
+          // console.log(data);
+        }
+      });
   }
 }
