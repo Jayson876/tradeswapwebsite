@@ -6,9 +6,8 @@
         <div class="form-title">Sign In</div>
         <p class="form-subtitle">Please sign in to your account.</p>
         <form
-          name="form"
-          #form="ngForm"
-          (ngSubmit)="form.form.valid && onSubmit()"
+          [formGroup]="registerForm"
+          (submit)="onSubmit()"
           novalidate
         >
           <div class="form-group">
