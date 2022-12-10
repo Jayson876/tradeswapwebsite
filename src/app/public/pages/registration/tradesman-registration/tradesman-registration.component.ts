@@ -73,6 +73,7 @@ export class TradesmanRegistrationComponent {
       this.parishes = allParishes.data;
     })
   }
+  
 
   getSkills(){
     this.skillService.getAllSkills().subscribe((allSkills:any) =>{
